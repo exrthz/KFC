@@ -26,6 +26,7 @@ h1, h2, h3, h4, .logo { font-family: $font-head; text-transform: uppercase; lett
 }
 
 // ===== Header =====
+<<<<<<< HEAD
 .promo-bar { background: $dark; color: $gold; text-align: center; padding: 8px; font-size: .9rem; }
 .header { position: sticky; top: 0; z-index: 50; @include flex(row, space-between); padding: 14px 6%; background: $white; transition: box-shadow .3s, padding .3s;
   &.scrolled { box-shadow: 0 4px 18px rgba(0,0,0,.15); padding: 8px 6%; }
@@ -37,6 +38,34 @@ h1, h2, h3, h4, .logo { font-family: $font-head; text-transform: uppercase; lett
   @include mobile { .burger { display: block; }
     .nav { position: absolute; top: 100%; left: 0; right: 0; background: $white; flex-direction: column; padding: 0; max-height: 0; overflow: hidden; transition: max-height .4s, padding .4s; &.open { max-height: 300px; padding: 20px; } }
     .btn--ghost { display: none; } }
+=======
+$beige: #f5ebdc;
+.header { position: sticky; top: 0; z-index: 50; @include flex(row, space-between); gap: 16px; padding: 12px 24px; background: $beige; transition: box-shadow .3s, padding .3s;
+  &.scrolled { box-shadow: 0 4px 18px rgba(0,0,0,.15); padding: 7px 24px; }
+  &__left, &__right { @include flex; gap: 18px; }
+  .burger { width: 34px; height: 34px; background: none; border: 0; cursor: pointer; @include flex(column); gap: 6px;
+    span { width: 24px; height: 3px; background: $dark; border-radius: 3px; transition: transform .3s, opacity .3s; }
+    &.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); } &.open span:nth-child(2) { opacity: 0; } &.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); } }
+  .logo { @include flex; transition: transform .3s; img { height: 40px; display: block; } &:hover { transform: scale(1.1) rotate(-3deg); } }
+  .seg { display: flex; border: 2px solid $dark; border-radius: 12px; overflow: hidden; background: $white;
+    &__btn { font: 600 .95rem $font-body; padding: 11px 26px; border: 0; background: none; cursor: pointer; transition: background .3s, color .3s; &.active { background: $dark; color: $white; } &:not(.active):hover { background: #eee; } } }
+  .btn--order { background: $red; color: $white; border-radius: 12px; padding: 11px 30px; @include flex; gap: 8px; &:hover { background: darken($red, 8%); transform: scale(1.05); } }
+  .greet { color: #8a7b6a; font-weight: 600; }
+  .pill { background: $dark; color: $white; border: 0; border-radius: 50px; padding: 8px 16px; font: 600 .9rem $font-body; cursor: pointer; transition: background .25s; &:hover { background: $red; } }
+  .icon { background: none; border: 0; cursor: pointer; color: $dark; position: relative; transition: transform .25s, color .25s; &:hover { transform: scale(1.18); color: $red; } }
+  .bag em { position: absolute; top: -6px; right: -8px; background: $red; color: $white; font: 700 .7rem $font-body; min-width: 18px; height: 18px; border-radius: 9px; @include flex; font-style: normal; }
+  .lang { display: flex; border: 2px solid $dark; border-radius: 50px; padding: 2px; background: $white;
+    button { border: 0; background: none; font: 700 .85rem $font-body; padding: 6px 12px; border-radius: 50px; cursor: pointer; transition: all .3s; &.on { background: $dark; color: $white; } } }
+  .nav { position: absolute; top: 100%; left: 0; width: 280px; background: $white; display: flex; flex-direction: column; gap: 4px; max-height: 0; overflow: hidden; padding: 0 24px; transition: max-height .4s, padding .4s; border-radius: 0 0 16px 0; font-weight: 600;
+    &.open { max-height: 320px; padding: 20px 24px; box-shadow: 0 12px 24px rgba(0,0,0,.15); }
+    a { padding: 10px 0; transition: color .2s, padding-left .2s; &:hover { color: $red; padding-left: 8px; } } }
+  .searchbar { position: absolute; inset: 0; background: $beige; @include flex(row, center); gap: 24px; padding: 0 6%; opacity: 0; pointer-events: none; transform: translateY(-100%); transition: transform .35s ease, opacity .35s;
+    &.open { opacity: 1; pointer-events: auto; transform: none; } }
+  .searchbox { flex: 1; max-width: 560px; @include flex(row, flex-start); gap: 10px; background: $white; border: 1px solid #d8c9b8; border-radius: 12px; padding: 12px 16px; color: #9a7b6a;
+    input { flex: 1; border: 0; outline: 0; font: 1rem $font-body; color: $dark; background: none; } &:focus-within { border-color: $red; box-shadow: 0 0 0 3px rgba($red, .15); } }
+  .cancel { background: none; border: 0; color: $red; font: 700 1rem $font-body; cursor: pointer; &:hover { text-decoration: underline; } }
+  @include mobile { padding: 10px 14px; &__left, &__right { gap: 10px; } .greet, .pill, .seg, .lang { display: none; } .btn--order { padding: 10px 16px; span { display: none; } } }
+>>>>>>> aem
 }
 
 // ===== Hero =====
@@ -102,3 +131,22 @@ h1, h2, h3, h4, .logo { font-family: $font-head; text-transform: uppercase; lett
 // ===== Utilities =====
 .reveal { opacity: 0; transform: translateY(50px); transition: opacity .9s ease, transform .9s ease; &.show { opacity: 1; transform: none; } }
 .toast { position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 100px); background: $dark; color: $white; padding: 14px 28px; border-radius: 50px; transition: transform .4s; z-index: 99; &.on { transform: translate(-50%, 0); } }
+<<<<<<< HEAD
+=======
+
+// ===== Login page =====
+.login { position: fixed; inset: 0; z-index: 100; background: $beige; overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(30px); transition: opacity .4s, transform .4s, visibility .4s;
+  &.open { opacity: 1; visibility: visible; transform: none; }
+  &__top { @include flex; position: relative; height: 70px; box-shadow: 0 2px 6px rgba(0,0,0,.12); .lang { position: absolute; right: 24px; } }
+  &__logo img { height: 42px; display: block; }
+  &__back { position: absolute; top: 90px; left: 24px; background: none; border: 0; cursor: pointer; color: $dark; transition: transform .25s; &:hover { transform: translateX(-6px); color: $red; } }
+  &__box { max-width: 336px; margin: 0 auto; padding: 40px 0 60px; @include flex(column, flex-start, stretch); gap: 16px; text-align: center;
+    h2 { font: 700 1.5rem $font-body; text-transform: none; letter-spacing: 0; margin-bottom: 12px; }
+    input { padding: 15px 16px; border: 1px solid #ddd0c0; border-radius: 8px; font: 1rem $font-body; outline: 0; transition: border-color .2s, box-shadow .2s; &:focus { border-color: $red; box-shadow: 0 0 0 3px rgba($red, .15); } }
+    .or { margin: 14px 0 8px; color: #8a7b6a; font-weight: 600; } .noacc { margin-top: 40px; font-weight: 600; margin-bottom: 0; }
+    .guest { font-size: 1.15rem; margin: 22px 0 8px; a { color: $red; font-weight: 700; } }
+    .forgot { color: $red; font-weight: 700; margin-top: 14px; } .msg { font-weight: 600; color: $red; min-height: 22px; } } }
+.btn--wide { width: 100%; padding: 14px; &.btn--primary { margin-top: 4px; } }
+.btn--social { background: $white; border: 1.5px solid $dark; color: $dark; @include flex; gap: 10px; padding: 11px; font-weight: 500; &:hover { background: #f3f3f3; transform: scale(1.02); } }
+.btn--outline-red { background: $white; border: 1.5px solid $red; color: $red; font-weight: 700; &:hover { background: $red; color: $white; } }
+>>>>>>> aem
