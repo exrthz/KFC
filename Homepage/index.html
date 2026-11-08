@@ -7,12 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 <header class="header" id="header">
   <div class="header__left">
     <button class="burger" id="burger" aria-label="เมนู"><span></span><span></span><span></span></button>
-    <a href="#" class="logo" aria-label="KFC"><img src="images/kfclogo.png" alt="KFC"></a>
+    <a href="#" class="logo" id="logoTrigger" aria-label="KFC"><img src="images/kfclogo.png" alt="KFC"></a>
     <div class="seg" id="seg">
       <button class="seg__btn active" data-i18n="delivery">เดลิเวอรี่</button>
       <button class="seg__btn" data-i18n="pickup">รับกลับบ้าน / ทานที่ร้าน</button>
@@ -32,6 +33,23 @@
   </div>
   <nav class="nav" id="nav"><a href="#menu">เมนู</a><a href="#deals">โปรโมชัน</a><a href="#app">แอป KFC</a><a href="#stores">ร้านใกล้คุณ</a></nav>
 </header>
+
+<!-- แถบเลื่อนด้านซ้ายเมื่อกดที่ Logo -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="logo-drawer" id="logoDrawer" aria-hidden="true">
+  <button class="logo-drawer__close" id="drawerClose" aria-label="ปิดเมนู">✕</button>
+  <ul class="logo-drawer__list">
+    <li><a href="#deals" class="is-bold" data-i18n="drawer_promo">โปรโมชัน</a></li>
+    <li><a href="#menu" data-i18n="drawer_bestseller">สินค้าขายดี</a></li>
+    <li><a href="#menu" data-i18n="drawer_group">ชุดคอมโบ</a></li>
+    <li><a href="#menu" data-i18n="drawer_box">เดอะบ็อกซ์</a></li>
+    <li><a href="#menu" data-i18n="drawer_setone">ชุดอิ่มคนเดียว</a></li>
+    <li><a href="#menu" data-i18n="drawer_cbr">ไก่ทอด / เบอร์เกอร์ / ข้าว</a></li>
+    <li><a href="#menu" data-i18n="drawer_snacks">ของทานเล่น</a></li>
+    <li><a href="#menu" data-i18n="drawer_sweets">ของหวาน</a></li>
+    <li><a href="#menu" data-i18n="drawer_drinks">เครื่องดื่ม</a></li>
+  </ul>
+</aside>
 
 <section class="hero">
   <div class="hero__bg" data-parallax="0.3"></div>
@@ -120,5 +138,44 @@
 </section>
 <div class="toast" id="toast"></div>
 <script src="js/script.js"></script>
+<script>
+  (function () {
+    const burger = document.getElementById('burger');
+    const logoTrigger = document.getElementById('logoTrigger');
+    const drawer = document.getElementById('logoDrawer');
+    const backdrop = document.getElementById('drawerBackdrop');
+    const closeBtn = document.getElementById('drawerClose');
+
+    function openDrawer(e) {
+      e.preventDefault();
+      e.stopImmediatePropagation(); // ป้องกันไม่ให้ script.js เดิมทำงานซ้อน
+      drawer.classList.add('open');
+      backdrop.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      backdrop.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+
+    // กดขีด 3 ขีดเพื่อเปิดแถบเลื่อนด้านซ้าย
+    burger.addEventListener('click', openDrawer, true);
+
+    // กดโลโก้แล้วไม่มีอะไรเกิดขึ้น
+    if (logoTrigger) {
+      logoTrigger.addEventListener('click', function (e) {
+        e.preventDefault();
+      });
+    }
+
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+  })();
+</script>
 </body>
 </html>
