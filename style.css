@@ -84,16 +84,6 @@ h1, h2, h3, h4, .logo {
   padding: 10px 18px;
 }
 
-
-.promo-bar {
-  background: #1b1b1b;
-  color: #ffb81c;
-  text-align: center;
-  padding: 8px;
-  font-size: 0.9rem;
-}
-
-
 .header {
   position: sticky;
   top: 0;
@@ -102,40 +92,16 @@ h1, h2, h3, h4, .logo {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  padding: 14px 6%;
-  background: #fff;
-
   gap: 16px;
   padding: 12px 24px;
   background: #f5ebdc;
-
   transition: box-shadow 0.3s, padding 0.3s;
 }
 .header.scrolled {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
-
-  padding: 8px 6%;
-}
-.header .logo {
-  background: #e4002b;
-  color: #fff;
-  font-size: 2rem;
-  padding: 2px 16px;
-  border-radius: 6px;
-  line-height: 1.1;
-}
-.header .logo small {
-  display: block;
-  font: 300 0.5rem "Kanit", sans-serif;
-  letter-spacing: 1px;
-}
-.header .nav {
-
   padding: 7px 24px;
 }
 .header__left, .header__right {
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -808,7 +774,6 @@ h1, h2, h3, h4, .logo {
 .toast.on {
   transform: translate(-50%, 0);
 }
-
 
 .login {
   position: fixed;

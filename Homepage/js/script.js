@@ -35,11 +35,6 @@ $('#prev').onclick=()=>track.scrollBy({left:-304});
 setInterval(()=>{ track.scrollLeft+track.clientWidth>=track.scrollWidth-4 ? track.scrollTo({left:0}) : track.scrollBy({left:304}); },4500);
 
 // Mobile nav + store finder
-<<<<<<< HEAD
-$('#burger').onclick=()=>$('#nav').classList.toggle('open');
-document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>$('#nav').classList.remove('open'));
-$('#find').onclick=()=>{ const v=$('#loc').value.trim(); $('#findMsg').textContent = v ? `📍 พบสาขา KFC ใกล้ "${v}" จำนวน 5 สาขา` : 'กรุณากรอกจังหวัดหรือรหัสไปรษณีย์'; };
-=======
 $('#burger').onclick=()=>{ $('#nav').classList.toggle('open'); $('#burger').classList.toggle('open'); };
 document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>{ $('#nav').classList.remove('open'); $('#burger').classList.remove('open'); });
 $('#find').onclick=()=>{ const v=$('#loc').value.trim(); $('#findMsg').textContent = v ? `📍 พบสาขา KFC ใกล้ "${v}" จำนวน 5 สาขา` : 'กรุณากรอกจังหวัดหรือรหัสไปรษณีย์'; };
@@ -65,4 +60,3 @@ $('#guest').onclick=e=>{ e.preventDefault(); closeLogin(); toast('เข้า�
 $('#signin').onclick=()=>{ const v=$('#phone').value.trim(); $('#loginMsg').textContent = /^0\d{8,9}$/.test(v) ? '✔ ส่งรหัส OTP ไปที่ '+v+' แล้ว' : 'กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง'; };
 addEventListener('keydown',e=>{ if(e.key==='Escape') closeLogin(); });
 applyLang();
->>>>>>> aem

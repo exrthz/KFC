@@ -26,19 +26,6 @@ h1, h2, h3, h4, .logo { font-family: $font-head; text-transform: uppercase; lett
 }
 
 // ===== Header =====
-<<<<<<< HEAD
-.promo-bar { background: $dark; color: $gold; text-align: center; padding: 8px; font-size: .9rem; }
-.header { position: sticky; top: 0; z-index: 50; @include flex(row, space-between); padding: 14px 6%; background: $white; transition: box-shadow .3s, padding .3s;
-  &.scrolled { box-shadow: 0 4px 18px rgba(0,0,0,.15); padding: 8px 6%; }
-  .logo { background: $red; color: $white; font-size: 2rem; padding: 2px 16px; border-radius: 6px; line-height: 1.1; small { display: block; font: 300 .5rem $font-body; letter-spacing: 1px; } }
-  .nav { @include flex(row, center); gap: 32px; font-weight: 600;
-    a { position: relative; &::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 3px; background: $red; transition: width .3s; } &:hover::after { width: 100%; } } }
-  .actions { @include flex; gap: 10px; }
-  .burger { display: none; font-size: 1.6rem; background: none; border: 0; cursor: pointer; }
-  @include mobile { .burger { display: block; }
-    .nav { position: absolute; top: 100%; left: 0; right: 0; background: $white; flex-direction: column; padding: 0; max-height: 0; overflow: hidden; transition: max-height .4s, padding .4s; &.open { max-height: 300px; padding: 20px; } }
-    .btn--ghost { display: none; } }
-=======
 $beige: #f5ebdc;
 .header { position: sticky; top: 0; z-index: 50; @include flex(row, space-between); gap: 16px; padding: 12px 24px; background: $beige; transition: box-shadow .3s, padding .3s;
   &.scrolled { box-shadow: 0 4px 18px rgba(0,0,0,.15); padding: 7px 24px; }
@@ -65,7 +52,6 @@ $beige: #f5ebdc;
     input { flex: 1; border: 0; outline: 0; font: 1rem $font-body; color: $dark; background: none; } &:focus-within { border-color: $red; box-shadow: 0 0 0 3px rgba($red, .15); } }
   .cancel { background: none; border: 0; color: $red; font: 700 1rem $font-body; cursor: pointer; &:hover { text-decoration: underline; } }
   @include mobile { padding: 10px 14px; &__left, &__right { gap: 10px; } .greet, .pill, .seg, .lang { display: none; } .btn--order { padding: 10px 16px; span { display: none; } } }
->>>>>>> aem
 }
 
 // ===== Hero =====
@@ -131,8 +117,6 @@ $beige: #f5ebdc;
 // ===== Utilities =====
 .reveal { opacity: 0; transform: translateY(50px); transition: opacity .9s ease, transform .9s ease; &.show { opacity: 1; transform: none; } }
 .toast { position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 100px); background: $dark; color: $white; padding: 14px 28px; border-radius: 50px; transition: transform .4s; z-index: 99; &.on { transform: translate(-50%, 0); } }
-<<<<<<< HEAD
-=======
 
 // ===== Login page =====
 .login { position: fixed; inset: 0; z-index: 100; background: $beige; overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(30px); transition: opacity .4s, transform .4s, visibility .4s;
@@ -149,4 +133,3 @@ $beige: #f5ebdc;
 .btn--wide { width: 100%; padding: 14px; &.btn--primary { margin-top: 4px; } }
 .btn--social { background: $white; border: 1.5px solid $dark; color: $dark; @include flex; gap: 10px; padding: 11px; font-weight: 500; &:hover { background: #f3f3f3; transform: scale(1.02); } }
 .btn--outline-red { background: $white; border: 1.5px solid $red; color: $red; font-weight: 700; &:hover { background: $red; color: $white; } }
->>>>>>> aem

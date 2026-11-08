@@ -84,17 +84,6 @@ h1, h2, h3, h4, .logo {
   padding: 10px 18px;
 }
 
-
-.promo-bar {
-  background: #1b1b1b;
-  color: #ffb81c;
-  text-align: center;
-  padding: 8px;
-  font-size: 0.9rem;
-}
-
-
-
 .header {
   position: sticky;
   top: 0;
@@ -103,100 +92,20 @@ h1, h2, h3, h4, .logo {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  padding: 14px 6%;
-  background: #fff;
-
   gap: 16px;
   padding: 12px 24px;
   background: #f5ebdc;
-
   transition: box-shadow 0.3s, padding 0.3s;
 }
 .header.scrolled {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
-
-  padding: 8px 6%;
-}
-.header .logo {
-  background: #e4002b;
-  color: #fff;
-  font-size: 2rem;
-  padding: 2px 16px;
-  border-radius: 6px;
-  line-height: 1.1;
-}
-.header .logo small {
-  display: block;
-  font: 300 0.5rem "Kanit", sans-serif;
-  letter-spacing: 1px;
-}
-.header .nav {
-
   padding: 7px 24px;
 }
 .header__left, .header__right {
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-  gap: 32px;
-  font-weight: 600;
-}
-.header .nav a {
-  position: relative;
-}
-.header .nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 3px;
-  background: #e4002b;
-  transition: width 0.3s;
-}
-.header .nav a:hover::after {
-  width: 100%;
-}
-.header .actions {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-.header .burger {
-  display: none;
-  font-size: 1.6rem;
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
-@media (max-width: 860px) {
-  .header .burger {
-    display: block;
-  }
-  .header .nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s, padding 0.4s;
-  }
-  .header .nav.open {
-    max-height: 300px;
-    padding: 20px;
-  }
-  .header .btn--ghost {
-
   gap: 18px;
 }
 .header .burger {
@@ -866,7 +775,6 @@ h1, h2, h3, h4, .logo {
   transform: translate(-50%, 0);
 }
 
-
 .login {
   position: fixed;
   inset: 0;
@@ -1034,5 +942,4 @@ h1, h2, h3, h4, .logo {
 .btn--outline-red:hover {
   background: #e4002b;
   color: #fff;
-}
 }
