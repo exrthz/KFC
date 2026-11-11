@@ -1,0 +1,658 @@
+﻿diff --git a/Homepage/index.html b/Homepage/index.html
+index 4fa1cf8..14662b8 100644
+--- a/Homepage/index.html
++++ b/Homepage/index.html
+@@ -1,482 +1,181 @@
+-
+ <!DOCTYPE html>
+ <html lang="th">
+ <head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1">
+-    <title>KFC เนเธ—เธข | เนเธเนเธ—เธญเธ”เธชเธนเธ•เธฃเธ•เนเธเธ•เธณเธฃเธฑเธ</title>
+-
+-    <!-- GOOGLE FONTS -->
+-    <link rel="preconnect" href="https://fonts.googleapis.com">
+-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+-
+-    <!-- CSS -->
+-    <link rel="stylesheet" href="css/style.css">
++<meta charset="UTF-8">
++<meta name="viewport" content="width=device-width, initial-scale=1">
++<title>KFC เนเธ—เธข | เนเธเนเธ—เธญเธ”เธชเธนเธ•เธฃเธ•เนเธเธ•เธณเธฃเธฑเธ</title>
++<link rel="preconnect" href="https://fonts.googleapis.com">
++<link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
++<link rel="stylesheet" href="css/style.css">
+ </head>
+-
+ <body>
+-
+-    <!-- ========================================
+-         HEADER
+-    ======================================== -->
+-
+-    <header class="header-wrapper">
+-
+-    <div class="header" id="header">
+-
+-        <div class="header__left">
+-
+-            <button class="burger" id="burger" aria-label="เน€เธกเธเธน">
+-                <span></span>
+-                <span></span>
+-                <span></span>
+-            </button>
+-
+-            <a href="#" class="logo" id="logoTrigger" aria-label="KFC">
+-                <img src="images/kfclogo.png" alt="KFC">
+-            </a>
+-
+-            <div class="seg" id="seg">
+-                <button class="seg__btn active" data-i18n="delivery">เน€เธ”เธฅเธดเน€เธงเธญเธฃเธตเน</button>
+-                <button class="seg__btn" data-i18n="pickup">เธฃเธฑเธเธเธฅเธฑเธเธเนเธฒเธ / เธ—เธฒเธเธ—เธตเนเธฃเนเธฒเธ</button>
+-            </div>
+-
+-            <a href="#menu" class="btn btn--order">
+-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+-                    <circle cx="6" cy="17" r="3"/>
+-                    <circle cx="19" cy="17" r="2"/>
+-                    <path d="M9 17h7M13 6h4l2 6M6 14l3-6h4"/>
+-                </svg>
+-                <span data-i18n="order">เน€เธฃเธดเนเธกเธชเธฑเนเธเธญเธฒเธซเธฒเธฃ</span>
+-            </a>
+-
+-        </div>
+-
+-        <div class="header__right">
+-
+-            <span class="greet" id="greet">เธชเธงเธฑเธชเธ”เธตเธ•เธญเธเธเนเธฒเธข</span>
+-
+-            <button class="pill" id="loginBtn" data-i18n="login">
+-                เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ / เธฅเธเธ—เธฐเน€เธเธตเธขเธ
+-            </button>
+-
+-            <button class="icon" aria-label="เธเนเธเธซเธฒ" id="searchBtn">
+-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+-                    <circle cx="11" cy="11" r="7"/>
+-                    <path d="M20 20l-4-4"/>
+-                </svg>
+-            </button>
+-
+-            <button class="icon bag" id="cartBtn" aria-label="เธ•เธฐเธเธฃเนเธฒ">
+-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+-                    <path d="M6 3h12l2 4v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7l2-4zm1 5a5 5 0 0 0 10 0H15a3 3 0 0 1-6 0H7z"/>
+-                </svg>
+-                <em id="cartCount">0</em>
+-            </button>
+-
+-            <div class="lang" id="lang">
+-                <button class="on" data-lang="th">TH</button>
+-                <button data-lang="en">EN</button>
+-            </div>
+-
+-        </div>
+-
+-        <!-- SEARCH BAR -->
+-        <div class="searchbar" id="searchbar">
+-
+-            <label class="searchbox">
+-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+-                    <circle cx="11" cy="11" r="7"/>
+-                    <path d="M20 20l-4-4"/>
+-                </svg>
+-
+-                <input id="searchInput" type="text" placeholder="เธเนเธเธซเธฒเน€เธกเธเธน" data-ph="search">
+-            </label>
+-
+-            <button class="cancel" id="searchCancel" data-i18n="cancel">
+-                เธขเธเน€เธฅเธดเธ
+-            </button>
+-
+-        </div>
+-
+-                <!-- NAVIGATION -->
+-        <nav class="nav" id="nav">
+-            <a href="#menu">เน€เธกเธเธน</a>
+-            <a href="#deals">เนเธเธฃเนเธกเธเธฑเธ</a>
+-            <a href="#app">เนเธญเธ KFC</a>
+-            <a href="#stores">เธฃเนเธฒเธเนเธเธฅเนเธเธธเธ“</a>
+-        </nav>
+-
++<header class="header" id="header">
++  <div class="header__left">
++    <button class="burger" id="burger" aria-label="เน€เธกเธเธน"><span></span><span></span><span></span></button>
++    <a href="#" class="logo" id="logoTrigger" aria-label="KFC"><img src="images/kfclogo.png" alt="KFC"></a>
++    <div class="seg" id="seg">
++      <button class="seg__btn active" data-i18n="delivery" data-mode="delivery">เน€เธ”เธฅเธดเน€เธงเธญเธฃเธตเน</button>
++      <button class="seg__btn" data-i18n="pickup" data-mode="pickup">เธฃเธฑเธเธเธฅเธฑเธเธเนเธฒเธ / เธ—เธฒเธเธ—เธตเนเธฃเนเธฒเธ</button>
+     </div>
+-
+-    <!-- ========================================
+-         BANNER SLIDER
+-    ======================================== -->
+-
+-    <section class="banner-slider" id="bannerSlider">
+-
+-        <div class="banner-track" id="bannerTrack">
+-
+-            <div class="banner-slide active">
+-                <img src="images/banner/b1.webp" alt="KFC Original Recipe">
+-            </div>
+-
+-            <div class="banner-slide">
+-                <img src="images/banner/b2.webp" alt="KFC Fried Chicken">
+-            </div>
+-
+-            <div class="banner-slide">
+-                <img src="images/banner/b3.webp" alt="KFC The Box Kaisen and Scoops Fries">
+-            </div>
+-
+-            <div class="banner-slide">
+-                <img src="images/banner/b4.webp" alt="KFC Scoops Fries">
+-            </div>
+-
+-        </div>
+-
+-        <button class="banner-arrow banner-prev" id="bannerPrev" aria-label="Previous banner">
+-            &#10094;
+-        </button>
+-
+-        <button class="banner-arrow banner-next" id="bannerNext" aria-label="Next banner">
+-            &#10095;
+-        </button>
+-
+-        <div class="banner-dots" id="bannerDots">
+-            <button class="banner-dot active" data-slide="0" aria-label="Banner 1"></button>
+-            <button class="banner-dot" data-slide="1" aria-label="Banner 2"></button>
+-            <button class="banner-dot" data-slide="2" aria-label="Banner 3"></button>
+-            <button class="banner-dot" data-slide="3" aria-label="Banner 4"></button>
+-        </div>
+-
+-    </section>
+-
++    <a href="#menu" class="btn btn--order"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3"/><circle cx="19" cy="17" r="2"/><path d="M9 17h7M13 6h4l2 6M6 14l3-6h4"/></svg><span data-i18n="order">เน€เธฃเธดเนเธกเธชเธฑเนเธเธญเธฒเธซเธฒเธฃ</span></a>
++  </div>
++  <div class="header__right">
++    <span class="greet" id="greet">เธชเธงเธฑเธชเธ”เธตเธ•เธญเธเธเนเธฒเธข</span>
++    <button class="pill" id="loginBtn" data-i18n="login">เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ / เธฅเธเธ—เธฐเน€เธเธตเธขเธ</button>
++    <button class="icon" aria-label="เธเนเธเธซเธฒ" id="searchBtn"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
++    <button class="icon bag" id="cartBtn" aria-label="เธ•เธฐเธเธฃเนเธฒ"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M6 3h12l2 4v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7l2-4zm1 5a5 5 0 0 0 10 0H15a3 3 0 0 1-6 0H7z"/></svg><em id="cartCount">0</em></button>
++    <div class="lang" id="lang"><button class="on" data-lang="th">TH</button><button data-lang="en">EN</button></div>
++  </div>
++  <div class="searchbar" id="searchbar">
++    <label class="searchbox"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="searchInput" type="text" placeholder="เธเนเธเธซเธฒเน€เธกเธเธน" data-ph="search"></label>
++    <button class="cancel" id="searchCancel" data-i18n="cancel">เธขเธเน€เธฅเธดเธ</button>
++  </div>
++  <nav class="nav" id="nav"><a href="#menu" data-i18n="nav_menu">เน€เธกเธเธน</a><a href="#deals" data-i18n="nav_deals">เนเธเธฃเนเธกเธเธฑเธ</a><a href="#app" data-i18n="nav_app">เนเธญเธ KFC</a></nav>
+ </header>
+ 
+-
+-
+-    <!-- ========================================
+-         LOGO DRAWER
+-    ======================================== -->
+-
+-    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+-
+-    <aside class="logo-drawer" id="logoDrawer" aria-hidden="true">
+-
+-        <button class="logo-drawer__close" id="drawerClose" aria-label="เธเธดเธ”เน€เธกเธเธน">
+-            โ•
+-        </button>
+-
+-        <ul class="logo-drawer__list">
+-            <li><a href="#deals" class="is-bold" data-i18n="drawer_promo">เนเธเธฃเนเธกเธเธฑเธ</a></li>
+-            <li><a href="#menu" data-i18n="drawer_bestseller">เธชเธดเธเธเนเธฒเธเธฒเธขเธ”เธต</a></li>
+-            <li><a href="#menu" data-i18n="drawer_group">เธเธธเธ”เธเธญเธกเนเธ</a></li>
+-            <li><a href="#menu" data-i18n="drawer_box">เน€เธ”เธญเธฐเธเนเธญเธเธเน</a></li>
+-            <li><a href="#menu" data-i18n="drawer_setone">เธเธธเธ”เธญเธดเนเธกเธเธเน€เธ”เธตเธขเธง</a></li>
+-            <li><a href="#menu" data-i18n="drawer_cbr">เนเธเนเธ—เธญเธ” / เน€เธเธญเธฃเนเน€เธเธญเธฃเน / เธเนเธฒเธง</a></li>
+-            <li><a href="#menu" data-i18n="drawer_snacks">เธเธญเธเธ—เธฒเธเน€เธฅเนเธ</a></li>
+-            <li><a href="#menu" data-i18n="drawer_sweets">เธเธญเธเธซเธงเธฒเธ</a></li>
+-            <li><a href="#menu" data-i18n="drawer_drinks">เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</a></li>
+-        </ul>
+-
+-    </aside>
+-
+-
+-    <!-- ========================================
+-         HERO
+-    ======================================== -->
+-
+-    <section class="hero">
+-
+-        <div class="hero__bg" data-parallax="0.3"></div>
+-
+-        <div class="hero__text reveal">
+-            <span class="tag">เนเธซเธกเน!</span>
+-
+-            <h1>เนเธเนเธ—เธญเธ”<br>เธเธฃเธญเธเธเธญเธ<br>เธเธธเนเธกเนเธ</h1>
+-
+-            <p>เธชเธนเธ•เธฃเธฅเธฑเธ 11 เน€เธเธฃเธทเนเธญเธเน€เธ—เธจเนเธฅเธฐเธชเธกเธธเธเนเธเธฃ เธ—เธญเธ”เธชเธ”เนเธซเธกเนเธ—เธธเธเธงเธฑเธ</p>
+-
+-            <a href="#menu" class="btn btn--primary">เธชเธฑเนเธเน€เธฅเธข</a>
+-            <a href="#deals" class="btn btn--outline">เธ”เธนเนเธเธฃเนเธกเธเธฑเธ</a>
+-        </div>
+-
+-        <div class="hero__art" data-parallax="-0.15">
+-            <span class="bucket">๐—</span>
+-            <span class="float f1">๐</span>
+-            <span class="float f2">๐ฅค</span>
+-            <span class="float f3">๐”</span>
+-        </div>
+-
+-    </section>
+-
+-
+-    <!-- ========================================
+-         MENU
+-    ======================================== -->
+-
+-    <section class="categories" id="menu">
+-
+-        <h2 class="title reveal">เน€เธฅเธทเธญเธเน€เธกเธเธนเนเธเธฃเธ”</h2>
+-
+-        <div class="cat-list">
+-            <button class="cat active" data-cat="chicken"><i>๐—</i>เนเธเนเธ—เธญเธ”</button>
+-            <button class="cat" data-cat="burger"><i>๐”</i>เน€เธเธญเธฃเนเน€เธเธญเธฃเน</button>
+-            <button class="cat" data-cat="snack"><i>๐</i>เธเธญเธเธ—เธฒเธเน€เธฅเนเธ</button>
+-            <button class="cat" data-cat="drink"><i>๐ฅค</i>เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</button>
+-            <button class="cat" data-cat="dessert"><i>๐ฆ</i>เธเธญเธเธซเธงเธฒเธ</button>
+-        </div>
+-
+-        <div class="products" id="products"></div>
+-
+-    </section>
+-
+-
+-    <!-- ========================================
+-         DEALS
+-    ======================================== -->
+-
+-    <section class="deals" id="deals">
+-
+-        <h2 class="title reveal">เนเธเธฃเนเธกเธเธฑเธเธชเธธเธ”เธเธธเนเธก</h2>
+-
+-        <div class="carousel">
+-
+-            <button class="arrow" id="prev">โ€น</button>
+-
+-            <div class="track" id="track">
+-
+-                <article class="deal">
+-                    <i>๐—</i>
+-                    <h3>เธเธฑเธเน€เธเนเธ• 8 เธเธดเนเธ</h3>
+-                    <p>เนเธเนเธ—เธญเธ” 8 เธเธดเนเธ + เน€เธเธฃเธเธเนเธเธฃเธฒเธขเธชเน + เธเนเธณ 4 เนเธเนเธง</p>
+-                    <b>เธฟ399</b>
+-                </article>
+-
+-                <article class="deal deal--dark">
+-                    <i>๐”</i>
+-                    <h3>เธเธดเธเน€เธเธญเธฃเน เธเธญเธกเนเธ</h3>
+-                    <p>เธเธดเธเน€เธเธญเธฃเนเน€เธเธญเธฃเนเน€เธเธญเธฃเน + เนเธเนเธ—เธญเธ” + เธเนเธณ</p>
+-                    <b>เธฟ129</b>
+-                </article>
+-
+-                <article class="deal">
+-                    <i>๐ถ๏ธ</i>
+-                    <h3>เนเธเนเนเธเนเธ เธฎเธญเธ• &amp; เธชเนเธเธเธตเน</h3>
+-                    <p>เนเธเนเธ—เธญเธ”เธชเนเธเธเธตเน 4 เธเธดเนเธ เธฃเธชเธเธฑเธ”เธเนเธฒเธ</p>
+-                    <b>เธฟ189</b>
+-                </article>
+-
+-                <article class="deal deal--dark">
+-                    <i>๐</i>
+-                    <h3>เธเธธเธ”เนเธเธฃเนเธเธฒเธฃเนเธ•เธตเน</h3>
+-                    <p>เนเธเน 12 เธเธดเนเธ + เธเธฑเธเน€เธเนเธ• + เธเธฃเธฒเธขเธชเนเนเธซเธเน</p>
+-                    <b>เธฟ599</b>
+-                </article>
+-
+-            </div>
+-
+-            <button class="arrow" id="next">โ€บ</button>
+-
+-        </div>
+-
+-    </section>
+-
+-
+-    <!-- ========================================
+-         PARALLAX BAND
+-    ======================================== -->
+-
+-    <section class="parallax-band" data-parallax-bg>
+-
+-        <div class="reveal">
+-            <h2>เธชเธนเธ•เธฃเธฅเธฑเธ<br>เธ•เธฑเนเธเนเธ•เนเธเธต 1930</h2>
+-            <p>เธเธฑเธเน€เธญเธเธฎเธฒเธฃเนเนเธฅเธเธ”เน เนเธเธเน€เธ”เธญเธฃเนเธช เธชเธฃเนเธฒเธเธชเธฃเธฃเธเนเธฃเธชเธเธฒเธ•เธดเธ—เธตเนเธเธเธ—เธฑเนเธงเนเธฅเธเธฃเธฑเธ</p>
+-            <a href="#" class="btn btn--primary">เน€เธฃเธทเนเธญเธเธฃเธฒเธงเธเธญเธเน€เธฃเธฒ</a>
+-        </div>
+-
+-    </section>
+-
+-
+-    <!-- ========================================
+-         APP
+-    ======================================== -->
+-
+-    <section class="app" id="app">
+-
+-        <div class="app__phone reveal">
+-            ๐“ฑ<span>KFC</span>
+-        </div>
+-
+-        <div class="app__text reveal">
+-            <h2>เธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธญเธ KFC</h2>
+-            <p>เธชเธฐเธชเธกเนเธ•เนเธก เนเธฅเธเธเธนเธเธญเธ เนเธฅเธฐเธชเธฑเนเธเธญเธฒเธซเธฒเธฃเนเธ”เนเธเนเธฒเธขเธเธงเนเธฒเน€เธ”เธดเธก</p>
+-
+-            <ul>
+-                <li>โ” เธเธนเธเธญเธเธเธดเน€เธจเธฉเน€เธเธเธฒเธฐเธชเธกเธฒเธเธดเธ</li>
+-                <li>โ” เธ•เธดเธ”เธ•เธฒเธกเธชเธ–เธฒเธเธฐเธเธฒเธฃเธเธฑเธ”เธชเนเธ</li>
+-                <li>โ” เธชเธฑเนเธเธฅเนเธงเธเธซเธเนเธฒ เนเธกเนเธ•เนเธญเธเธฃเธญ</li>
+-            </ul>
+-
+-            <button class="btn btn--primary">App Store</button>
+-            <button class="btn btn--dark">Google Play</button>
+-        </div>
+-
+-    </section>
+-
+-
+-    <!-- ========================================
+-         STORE FINDER
+-    ======================================== -->
+-
+-    <section class="stores" id="stores">
+-
+-        <div class="reveal">
+-            <h2>เธเนเธเธซเธฒเธฃเนเธฒเธ KFC เนเธเธฅเนเธเธธเธ“</h2>
+-            <p>เธกเธฒเธเธเธงเนเธฒ 1,000 เธชเธฒเธเธฒเธ—เธฑเนเธงเธเธฃเธฐเน€เธ—เธจ</p>
+-        </div>
+-
+-        <form class="finder" onsubmit="return false">
+-            <input id="loc" placeholder="เธเธฃเธญเธเธเธฑเธเธซเธงเธฑเธ”เธซเธฃเธทเธญเธฃเธซเธฑเธชเนเธเธฃเธฉเธ“เธตเธขเน">
+-            <button class="btn btn--primary" id="find">เธเนเธเธซเธฒ</button>
+-        </form>
+-
+-        <p id="findMsg" class="msg"></p>
+-
+-    </section>
+-
+-
+-    <!-- ========================================
+-         FOOTER
+-    ======================================== -->
+-
+-    <footer class="footer">
+-
+-        <div class="cols">
+-
+-            <div>
+-                <h4>เน€เธกเธเธน</h4>
+-                <a href="#">เนเธเนเธ—เธญเธ”</a>
+-                <a href="#">เน€เธเธญเธฃเนเน€เธเธญเธฃเน</a>
+-                <a href="#">เธเธญเธเธซเธงเธฒเธ</a>
+-            </div>
+-
+-            <div>
+-                <h4>เน€เธเธตเนเธขเธงเธเธฑเธ KFC</h4>
+-                <a href="#">เน€เธฃเธทเนเธญเธเธฃเธฒเธงเธเธญเธเน€เธฃเธฒ</a>
+-                <a href="#">เธฃเนเธงเธกเธเธฒเธเธเธฑเธเน€เธฃเธฒ</a>
+-                <a href="#">เธเนเธฒเธงเธชเธฒเธฃ</a>
+-            </div>
+-
+-            <div>
+-                <h4>เธเนเธงเธขเน€เธซเธฅเธทเธญ</h4>
+-                <a href="#">เธ•เธดเธ”เธ•เนเธญเน€เธฃเธฒ</a>
+-                <a href="#">เธเธณเธ–เธฒเธกเธ—เธตเนเธเธเธเนเธญเธข</a>
+-                <a href="#">เธเนเธขเธเธฒเธขเธเธงเธฒเธกเน€เธเนเธเธชเนเธงเธเธ•เธฑเธง</a>
+-            </div>
+-
+-            <div>
+-                <h4>เธ•เธดเธ”เธ•เธฒเธกเน€เธฃเธฒ</h4>
+-                <a href="#">Facebook</a>
+-                <a href="#">Instagram</a>
+-                <a href="#">YouTube</a>
+-            </div>
+-
+-        </div>
+-
+-        <p class="copy">ยฉ 2026 KFC ยท เธเธฒเธเธเธตเนเธเธฑเธ”เธ—เธณเน€เธเธทเนเธญเธเธฒเธฃเธจเธถเธเธฉเธฒเน€เธ—เนเธฒเธเธฑเนเธ</p>
+-
+-    </footer>
+-
+-
+-    <!-- ========================================
+-         LOGIN
+-    ======================================== -->
+-
+-    <section class="login" id="login" aria-hidden="true">
+-
+-        <div class="login__top">
+-
+-            <a href="#" class="login__logo">
+-                <img src="images/kfclogo.png" alt="KFC">
+-            </a>
+-
+-            <div class="lang lang--login" id="lang2">
+-                <button class="on" data-lang="th">TH</button>
+-                <button data-lang="en">EN</button>
+-            </div>
+-
+-        </div>
+-
+-        <button class="login__back" id="loginBack" aria-label="เธเธฅเธฑเธ">
+-            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+-                <path d="M15 5l-7 7 7 7"/>
+-            </svg>
+-        </button>
+-
+-        <form class="login__box" id="loginForm" onsubmit="return false">
+-
+-            <h2 data-i18n="welcome">เธขเธดเธเธ”เธตเธ•เนเธญเธเธฃเธฑเธเธชเธนเน KFC</h2>
+-
+-            <input type="tel" id="phone" placeholder="เน€เธเธญเธฃเนเนเธ—เธฃเธจเธฑเธเธ—เน" data-ph="phone">
+-
+-            <button class="btn btn--wide btn--primary" id="signin" data-i18n="signin">
+-                เธฅเธเธเธทเนเธญเน€เธเนเธฒเนเธเน
+-            </button>
+-
+-            <p class="or" data-i18n="or">เธซเธฃเธทเธญ</p>
+-
+-            <button class="btn btn--wide btn--social" type="button">
+-                <svg width="24" height="24" viewBox="0 0 24 24">
+-                    <circle cx="12" cy="12" r="11" fill="#1877f2"/>
+-                    <path d="M13.5 20v-6.5h2.2l.4-2.6h-2.6V9.3c0-.8.3-1.3 1.4-1.3h1.3V5.7c-.2 0-1-.1-1.9-.1-2 0-3.3 1.2-3.3 3.4v1.9H8.8v2.6H11V20z" fill="#fff"/>
+-                </svg>
+-                Sign in with Facebook
+-            </button>
+-
+-            <button class="btn btn--wide btn--social" type="button">
+-                <svg width="22" height="22" viewBox="0 0 48 48">
+-                    <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6.1C12.3 13.6 17.7 9.5 24 9.5z"/>
+-                    <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.5-4.1 7-10.2 7-17.6z"/>
+-                    <path fill="#FBBC05" d="M10.4 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.9-4.7l-7.8-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8z"/>
+-                    <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.7-4.1-13.6-9.8l-7.8 6.1C6.5 42.6 14.6 48 24 48z"/>
+-                </svg>
+-                Sign in with Google
+-            </button>
+-
+-            <p class="noacc" data-i18n="noacc">เนเธกเนเธกเธตเธเธฑเธเธเธตเธเธนเนเนเธเน</p>
+-
+-            <button class="btn btn--wide btn--outline-red" type="button" data-i18n="register">
+-                เธชเธกเธฑเธเธฃเธเธฑเธเธเธตเธเธนเนเนเธเน
+-            </button>
+-
+-            <p class="guest">
+-                <span data-i18n="guest1">เน€เธฃเธดเนเธกเนเธเนเธเธฒเธเนเธเธ</span>
+-                <a href="#" id="guest" data-i18n="guest2">เธเธนเนเนเธเนเธเธฑเนเธงเธเธฃเธฒเธง</a>
+-            </p>
+-
+-            <a href="#" class="forgot" data-i18n="forgot">เธฅเธทเธกเธฃเธซเธฑเธชเธเนเธฒเธ?</a>
+-
+-            <p class="msg" id="loginMsg"></p>
+-
+-        </form>
+-
+-    </section>
+-
+-
+-    <!-- ========================================
+-         TOAST
+-    ======================================== -->
+-
+-    <div class="toast" id="toast"></div>
+-
+-
+-    <!-- ========================================
+-         MAIN JAVASCRIPT MODULE
+-    ======================================== -->
+-
+-    <script type="module" src="js/main.js"></script>
+-
++<!-- เนเธ–เธเน€เธฅเธทเนเธญเธเธ”เนเธฒเธเธเนเธฒเธขเน€เธกเธทเนเธญเธเธ”เธเธธเนเธกเน€เธกเธเธน 3 เธเธตเธ” -->
++<div class="drawer-backdrop" id="drawerBackdrop"></div>
++<aside class="logo-drawer" id="logoDrawer" aria-hidden="true">
++  <div class="logo-drawer__header">
++    <button class="logo-drawer__close" id="drawerClose" aria-label="เธเธดเธ”เน€เธกเธเธน">โ•</button>
++  </div>
++
++
++  <ul class="logo-drawer__list">
++    <li><a href="#deals" class="is-bold" data-i18n="drawer_promo">เนเธเธฃเนเธกเธเธฑเธ</a></li>
++    <li><a href="#menu" data-i18n="drawer_bestseller">เธชเธดเธเธเนเธฒเธเธฒเธขเธ”เธต</a></li>
++    <li><a href="#menu" data-i18n="drawer_group">เธเธธเธ”เธเธญเธกเนเธ</a></li>
++    <li><a href="#menu" data-i18n="drawer_box">เน€เธ”เธญเธฐเธเนเธญเธเธเน</a></li>
++    <li><a href="#menu" data-i18n="drawer_setone">เธเธธเธ”เธญเธดเนเธกเธเธเน€เธ”เธตเธขเธง</a></li>
++    <li><a href="#menu" data-i18n="drawer_cbr">เนเธเนเธ—เธญเธ” / เน€เธเธญเธฃเนเน€เธเธญเธฃเน / เธเนเธฒเธง</a></li>
++    <li><a href="#menu" data-i18n="drawer_snacks">เธเธญเธเธ—เธฒเธเน€เธฅเนเธ</a></li>
++    <li><a href="#menu" data-i18n="drawer_sweets">เธเธญเธเธซเธงเธฒเธ</a></li>
++    <li><a href="#menu" data-i18n="drawer_drinks">เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</a></li>
++  </ul>
++</aside>
++
++<section class="hero">
++  <div class="hero__bg" data-parallax="0.3"></div>
++  <div class="hero__text reveal">
++    <span class="tag" data-i18n="hero_tag">เนเธซเธกเน!</span>
++    <h1 data-i18n="hero_title">เนเธเนเธ—เธญเธ”<br>เธเธฃเธญเธเธเธญเธ<br>เธเธธเนเธกเนเธ</h1>
++    <p data-i18n="hero_desc">เธชเธนเธ•เธฃเธฅเธฑเธ 11 เน€เธเธฃเธทเนเธญเธเน€เธ—เธจเนเธฅเธฐเธชเธกเธธเธเนเธเธฃ เธ—เธญเธ”เธชเธ”เนเธซเธกเนเธ—เธธเธเธงเธฑเธ</p>
++    <a href="#menu" class="btn btn--primary" data-i18n="hero_order">เธชเธฑเนเธเน€เธฅเธข</a>
++    <a href="#deals" class="btn btn--outline" data-i18n="hero_deals">เธ”เธนเนเธเธฃเนเธกเธเธฑเธ</a>
++  </div>
++  <div class="hero__art" data-parallax="-0.15"><span class="bucket">๐—</span><span class="float f1">๐</span><span class="float f2">๐ฅค</span><span class="float f3">๐”</span></div>
++</section>
++
++<section class="categories" id="menu">
++  <h2 class="title reveal" data-i18n="menu_title">เน€เธฅเธทเธญเธเน€เธกเธเธนเนเธเธฃเธ”</h2>
++  <div class="cat-list">
++    <button class="cat active" data-cat="chicken"><i>๐—</i>เนเธเนเธ—เธญเธ”</button>
++    <button class="cat" data-cat="burger"><i>๐”</i>เน€เธเธญเธฃเนเน€เธเธญเธฃเน</button>
++    <button class="cat" data-cat="snack"><i>๐</i>เธเธญเธเธ—เธฒเธเน€เธฅเนเธ</button>
++    <button class="cat" data-cat="drink"><i>๐ฅค</i>เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</button>
++    <button class="cat" data-cat="dessert"><i>๐ฆ</i>เธเธญเธเธซเธงเธฒเธ</button>
++  </div>
++  <div class="products" id="products"></div>
++</section>
++
++<section class="deals" id="deals">
++  <h2 class="title reveal" data-i18n="deals_title">เนเธเธฃเนเธกเธเธฑเธเธชเธธเธ”เธเธธเนเธก</h2>
++  <div class="carousel">
++    <button class="arrow" id="prev">โ€น</button>
++    <div class="track" id="track">
++      <article class="deal"><i>๐—</i><h3>เธเธฑเธเน€เธเนเธ• 8 เธเธดเนเธ</h3><p>เนเธเนเธ—เธญเธ” 8 เธเธดเนเธ + เน€เธเธฃเธเธเนเธเธฃเธฒเธขเธชเน + เธเนเธณ 4 เนเธเนเธง</p><b>เธฟ399</b></article>
++      <article class="deal deal--dark"><i>๐”</i><h3>เธเธดเธเน€เธเธญเธฃเน เธเธญเธกเนเธ</h3><p>เธเธดเธเน€เธเธญเธฃเนเน€เธเธญเธฃเนเน€เธเธญเธฃเน + เนเธเนเธ—เธญเธ” + เธเนเธณ</p><b>เธฟ129</b></article>
++      <article class="deal"><i>๐ถ๏ธ</i><h3>เนเธเนเนเธเนเธ เธฎเธญเธ• &amp; เธชเนเธเธเธตเน</h3><p>เนเธเนเธ—เธญเธ”เธชเนเธเธเธตเน 4 เธเธดเนเธ เธฃเธชเธเธฑเธ”เธเนเธฒเธ</p><b>เธฟ189</b></article>
++      <article class="deal deal--dark"><i>๐</i><h3>เธเธธเธ”เนเธเธฃเนเธเธฒเธฃเนเธ•เธตเน</h3><p>เนเธเน 12 เธเธดเนเธ + เธเธฑเธเน€เธเนเธ• + เธเธฃเธฒเธขเธชเนเนเธซเธเน</p><b>เธฟ599</b></article>
++    </div>
++    <button class="arrow" id="next">โ€บ</button>
++  </div>
++</section>
++
++<section class="parallax-band" data-parallax-bg>
++  <div class="reveal"><h2>เธชเธนเธ•เธฃเธฅเธฑเธ<br>เธ•เธฑเนเธเนเธ•เนเธเธต 1930</h2><p>เธเธฑเธเน€เธญเธเธฎเธฒเธฃเนเนเธฅเธเธ”เน เนเธเธเน€เธ”เธญเธฃเนเธช เธชเธฃเนเธฒเธเธชเธฃเธฃเธเนเธฃเธชเธเธฒเธ•เธดเธ—เธตเนเธเธเธ—เธฑเนเธงเนเธฅเธเธฃเธฑเธ</p><a href="#menu" class="btn btn--primary">เน€เธฃเธทเนเธญเธเธฃเธฒเธงเธเธญเธเน€เธฃเธฒ</a></div>
++</section>
++
++<section class="app" id="app">
++  <div class="app__mockup reveal">
++    <div class="phone-tilt">๐“ฑ</div>
++  </div>
++  <div class="app__text reveal">
++    <h2>Download Application</h2>
++    <p>KFC Thailand Application</p>
++    <div class="app__buttons">
++      <a href="#" class="store-badge" aria-label="Download on the App Store">
++        <img src="images/AppStore.png" alt="App Store">
++      </a>
++      <a href="#" class="store-badge" aria-label="Get it on Google Play">
++        <img src="images/GooglePlay.png" alt="Google Play">
++      </a>
++    </div>
++  </div>
++</section>
++
++<footer class="footer">
++  <div class="cols">
++    <div>
++      <h4>BK INFO</h4>
++      <a href="#">About KFC</a>
++      <a href="#">Fresh Taste</a>
++      <a href="#">Made to Order</a>
++      <a href="#">Careers</a>
++    </div>
++    <div>
++      <h4 style="visibility: hidden; margin-bottom: 12px;">Hidden</h4>
++      <a href="#">Locations</a>
++      <a href="#">Promotions</a>
++    </div>
++    <div>
++      <h4>Members</h4>
++      <a href="#" id="footerMemberReg">Member Registration</a>
++      <a href="#">Crown Points</a>
++      <a href="#">Rewards</a>
++    </div>
++    <div>
++      <h4>BURGER KING</h4>
++      <div class="footer-bottom-links">
++        <a href="#">Privacy Policy</a> <span class="divider">|</span> 
++        <a href="#">Terms &amp; Conditions</a> <span class="divider">|</span> 
++        <a href="#">Contact us</a>
++      </div>
++      <div class="social-icons">
++        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4.04 4.04 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
++        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M13.5 20v-6.5h2.2l.4-2.6h-2.6V9.3c0-.8.3-1.3 1.4-1.3h1.3V5.7c-.2 0-1-.1-1.9-.1-2 0-3.3 1.2-3.3 3.4v1.9H8.8v2.6H11V20z"/></svg></a>
++      </div>
++    </div>
++  </div>
++  <p class="copy">TM &amp; Copyright 2022 MINOR INTERNATIONAL PCL. All rights reserved.</p>
++</footer>
++
++<section class="login" id="login" aria-hidden="true">
++  <div class="login__top">
++    <a href="#" class="login__logo"><img src="images/kfclogo.png" alt="KFC"></a>
++    <div class="lang lang--login" id="lang2">
++      <button class="on" data-lang="th">TH</button>
++      <button data-lang="en">EN</button>
++    </div>
++  </div>
++  <button class="login__back" id="loginBack" aria-label="เธเธฅเธฑเธ"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
++  <form class="login__box" id="loginForm" onsubmit="return false">
++    <h2 data-i18n="welcome">เธขเธดเธเธ”เธตเธ•เนเธญเธเธฃเธฑเธเธชเธนเน KFC</h2>
++    <input type="tel" id="phone" placeholder="เน€เธเธญเธฃเนเนเธ—เธฃเธจเธฑเธเธ—เน" data-ph="phone" autocomplete="tel">
++    <button class="btn btn--wide btn--primary" id="signin" data-i18n="signin">เธฅเธเธเธทเนเธญเน€เธเนเธฒเนเธเน</button>
++    <p class="or" data-i18n="or">เธซเธฃเธทเธญ</p>
++    <button class="btn btn--wide btn--social" id="btnFacebook" type="button"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1877f2"/><path d="M13.5 20v-6.5h2.2l.4-2.6h-2.6V9.3c0-.8.3-1.3 1.4-1.3h1.3V5.7c-.2 0-1-.1-1.9-.1-2 0-3.3 1.2-3.3 3.4v1.9H8.8v2.6H11V20z" fill="#fff"/></svg>Sign in with Facebook</button>
++    <button class="btn btn--wide btn--social" id="btnGoogle" type="button"><svg width="22" height="22" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6.1C12.3 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.5-4.1 7-10.2 7-17.6z"/><path fill="#FBBC05" d="M10.4 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.9-4.7l-7.8-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.7-4.1-13.6-9.8l-7.8 6.1C6.5 42.6 14.6 48 24 48z"/></svg>Sign in with Google</button>
++    <p class="noacc" data-i18n="noacc">เนเธกเนเธกเธตเธเธฑเธเธเธตเธเธนเนเนเธเน</p>
++    <button class="btn btn--wide btn--outline-red" id="registerBtn" type="button" data-i18n="register">เธชเธกเธฑเธเธฃเธเธฑเธเธเธตเธเธนเนเนเธเน</button>
++    <p class="guest"><span data-i18n="guest1">เน€เธฃเธดเนเธกเนเธเนเธเธฒเธเนเธเธ</span> <a href="#" id="guest" data-i18n="guest2">เธเธนเนเนเธเนเธเธฑเนเธงเธเธฃเธฒเธง</a></p>
++    <a href="#" class="forgot" id="forgotLink" data-i18n="forgot">เธฅเธทเธกเธฃเธซเธฑเธชเธเนเธฒเธ?</a>
++    <p class="msg" id="loginMsg"></p>
++  </form>
++</section>
++
++<div class="toast" id="toast"></div>
++
++<script src="js/script.js"></script>
+ </body>
+ </html>
