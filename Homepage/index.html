@@ -54,16 +54,21 @@
   </ul>
 </aside>
 
-<section class="hero">
-  <div class="hero__bg" data-parallax="0.3"></div>
-  <div class="hero__text reveal">
-    <span class="tag" data-i18n="hero_tag">ใหม่!</span>
-    <h1 data-i18n="hero_title">ไก่ทอด<br>กรอบนอก<br>นุ่มใน</h1>
-    <p data-i18n="hero_desc">สูตรลับ 11 เครื่องเทศและสมุนไพร ทอดสดใหม่ทุกวัน</p>
-    <a href="#menu" class="btn btn--primary" data-i18n="hero_order">สั่งเลย</a>
-    <a href="#deals" class="btn btn--outline" data-i18n="hero_deals">ดูโปรโมชัน</a>
+<section class="hero-slider" id="heroSlider">
+  <div class="hero-slider__track" id="heroTrack">
+    <div class="hero-slider__slide"><img src="images/promotion1.webp" alt="โปรโมชัน 1"></div>
+    <div class="hero-slider__slide"><img src="images/promotion2.webp" alt="โปรโมชัน 2"></div>
+    <div class="hero-slider__slide"><img src="images/promotion4.jpg" alt="โปรโมชัน 3"></div>
   </div>
-  <div class="hero__art" data-parallax="-0.15"><span class="bucket">🍗</span><span class="float f1">🍟</span><span class="float f2">🥤</span><span class="float f3">🍔</span></div>
+  <button class="hero-slider__arrow hero-slider__arrow--prev" id="heroPrev" aria-label="ก่อนหน้า">‹</button>
+  <button class="hero-slider__arrow hero-slider__arrow--next" id="heroNext" aria-label="ถัดไป">›</button>
+  
+  <!-- จุดบอกสถานะด้านล่าง -->
+  <div class="hero-slider__dots" id="heroDots">
+    <span class="active" data-index="0"></span>
+    <span data-index="1"></span>
+    <span data-index="2"></span>
+  </div>
 </section>
 
 <section class="categories" id="menu">
@@ -98,11 +103,12 @@
 
 <section class="app" id="app">
   <div class="app__mockup reveal">
-    <div class="phone-tilt">📱</div>
+    <!-- ดึงไฟล์รูปโทรศัพท์ที่คุณอัปโหลดมาแสดงผลแบบตั้งตรงปกติ -->
+    <img src="images/Phone.webp" alt="KFC App Mockup" class="phone-img">
   </div>
   <div class="app__text reveal">
-    <h2>Download Application</h2>
-    <p>KFC Thailand Application</p>
+    <h2>DOWNLOAD APPLICATION</h2>
+    <p class="app-subtitle">KFC Thailand Application</p>
     <div class="app__buttons">
       <a href="#" class="store-badge" aria-label="Download on the App Store">
         <img src="images/AppStore.png" alt="App Store">
