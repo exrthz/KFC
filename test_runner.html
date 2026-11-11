@@ -32,11 +32,11 @@ window.onload = function() {
       const thBtn = doc.querySelector('#lang button[data-lang="th"]');
       
       enBtn.click();
-      const test2a = doc.documentElement.lang === 'en' && doc.querySelector('.card h3').textContent.includes('Original Recipe');
+      const test2a = doc.documentElement.lang === 'en' && doc.querySelector('.card h3').textContent.includes('Jujai Bucket');
       log.push('TEST 2A (Switch to EN): ' + (test2a ? 'PASS' : 'FAIL'));
 
       thBtn.click();
-      const test2b = doc.documentElement.lang === 'th' && doc.querySelector('.card h3').textContent.includes('ไก่ทอดต้นตำรับ');
+      const test2b = doc.documentElement.lang === 'th' && doc.querySelector('.card h3').textContent.includes('จุใจ บักเก็ต');
       log.push('TEST 2B (Switch to TH): ' + (test2b ? 'PASS' : 'FAIL'));
 
       // Test 3: Cart Click when NOT logged in -> opens Login modal
