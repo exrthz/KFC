@@ -107,19 +107,87 @@ $beige: #f5ebdc;
   .finder { @include flex; gap: 10px; flex-wrap: wrap; input { padding: 13px 24px; border-radius: 50px; border: 0; min-width: 280px; font: 1rem $font-body; } }
   .msg { margin-top: 18px; font-weight: 600; min-height: 24px; } }
 
+
 // ===== Footer =====
-.footer { background: $dark; color: $white; padding: 60px 6% 24px;
-  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; }
-  h4 { color: $red; margin-bottom: 12px; font-size: 1.2rem; }
-  a { display: block; padding: 4px 0; opacity: .8; transition: .2s; &:hover { opacity: 1; color: $gold; padding-left: 6px; } }
-  .copy { text-align: center; margin-top: 40px; font-size: .85rem; opacity: .6; } }
+.footer { 
+  background: #3b190c; /* สีน้ำตาลเข้มตามภาพแรก */
+  color: #fff; 
+  padding: 60px 6% 24px;
+  
+  .cols { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 30px; 
+  }
+  
+  h4 { 
+    color: #fff; 
+    margin-bottom: 16px; 
+    font-size: 1.15rem; 
+    font-family: $font-head;
+  }
+  
+  a { 
+    display: inline-block; 
+    padding: 3px 0; 
+    opacity: 0.9; 
+    font-size: 0.95rem;
+    transition: .2s; 
+    &:hover { 
+      opacity: 1; 
+      color: $gold; 
+      padding-left: 4px; 
+    } 
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+    span {
+      opacity: 0.6;
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    a {
+      background: rgba(255, 255, 255, 0.1);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      &:hover {
+        background: #fff;
+        color: #3b190c;
+        transform: translateY(-3px);
+      }
+    }
+  }
+  
+  .copy { 
+    text-align: left; /* หรือ center ตามความต้องการ */
+    margin-top: 40px; 
+    font-size: 0.8rem; 
+    opacity: 0.7; 
+  } 
+}
+
+
 
 // ===== Utilities =====
 .reveal { opacity: 0; transform: translateY(50px); transition: opacity .9s ease, transform .9s ease; &.show { opacity: 1; transform: none; } }
-.toast { position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 100px); background: $dark; color: $white; padding: 14px 28px; border-radius: 50px; transition: transform .4s; z-index: 99; &.on { transform: translate(-50%, 0); } }
+.toast { position: fixed; bottom: 30px; left: 50%; transform: translate(-50%, 100px); background: $dark; color: $white; padding: 14px 28px; border-radius: 50px; transition: transform .4s; z-index: 999; pointer-events: none; box-shadow: 0 4px 20px rgba(0, 0, 0, .3); &.on { transform: translate(-50%, 0); } }
 
 // ===== Login page =====
-.login { position: fixed; inset: 0; z-index: 100; background: $beige; overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(30px); transition: opacity .4s, transform .4s, visibility .4s;
+.login { position: fixed; inset: 0; z-index: 250; background: $beige; overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(30px); transition: opacity .4s, transform .4s, visibility .4s;
   &.open { opacity: 1; visibility: visible; transform: none; }
   &__top { @include flex; position: relative; height: 70px; box-shadow: 0 2px 6px rgba(0,0,0,.12); .lang { position: absolute; right: 24px; } }
   &__logo img { height: 42px; display: block; }
@@ -130,6 +198,7 @@ $beige: #f5ebdc;
     .or { margin: 14px 0 8px; color: #8a7b6a; font-weight: 600; } .noacc { margin-top: 40px; font-weight: 600; margin-bottom: 0; }
     .guest { font-size: 1.15rem; margin: 22px 0 8px; a { color: $red; font-weight: 700; } }
     .forgot { color: $red; font-weight: 700; margin-top: 14px; } .msg { font-weight: 600; color: $red; min-height: 22px; } } }
+.pill.logged-in { background: $red; color: $white; &:hover { background: darken($red, 10%); } }
 .btn--wide { width: 100%; padding: 14px; &.btn--primary { margin-top: 4px; } }
 .btn--social { background: $white; border: 1.5px solid $dark; color: $dark; @include flex; gap: 10px; padding: 11px; font-weight: 500; &:hover { background: #f3f3f3; transform: scale(1.02); } }
 .btn--outline-red { background: $white; border: 1.5px solid $red; color: $red; font-weight: 700; &:hover { background: $red; color: $white; } }

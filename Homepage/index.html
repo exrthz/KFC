@@ -2,481 +2,182 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KFC ไทย | ไก่ทอดสูตรต้นตำรับ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFC ไทย | ไก่ทอดสูตรต้นตำรับ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-    <!-- ========================================
-         HEADER
-    ======================================== -->
-
-    <header class="header-wrapper">
-
-    <div class="header" id="header">
-
-        <div class="header__left">
-
-            <button class="burger" id="burger" aria-label="เมนู">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <a href="#" class="logo" id="logoTrigger" aria-label="KFC">
-                <img src="images/kfclogo.png" alt="KFC">
-            </a>
-
-            <div class="seg" id="seg">
-                <button class="seg__btn active" data-i18n="delivery">เดลิเวอรี่</button>
-                <button class="seg__btn" data-i18n="pickup">รับกลับบ้าน / ทานที่ร้าน</button>
-            </div>
-
-            <a href="#menu" class="btn btn--order">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="6" cy="17" r="3"/>
-                    <circle cx="19" cy="17" r="2"/>
-                    <path d="M9 17h7M13 6h4l2 6M6 14l3-6h4"/>
-                </svg>
-                <span data-i18n="order">เริ่มสั่งอาหาร</span>
-            </a>
-
-        </div>
-
-        <div class="header__right">
-
-            <span class="greet" id="greet">สวัสดีตอนบ่าย</span>
-
-            <button class="pill" id="loginBtn" data-i18n="login">
-                เข้าสู่ระบบ / ลงทะเบียน
-            </button>
-
-            <button class="icon" aria-label="ค้นหา" id="searchBtn">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
-                    <circle cx="11" cy="11" r="7"/>
-                    <path d="M20 20l-4-4"/>
-                </svg>
-            </button>
-
-            <button class="icon bag" id="cartBtn" aria-label="ตะกร้า">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-                    <path d="M6 3h12l2 4v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7l2-4zm1 5a5 5 0 0 0 10 0H15a3 3 0 0 1-6 0H7z"/>
-                </svg>
-                <em id="cartCount">0</em>
-            </button>
-
-            <div class="lang" id="lang">
-                <button class="on" data-lang="th">TH</button>
-                <button data-lang="en">EN</button>
-            </div>
-
-        </div>
-
-        <!-- SEARCH BAR -->
-        <div class="searchbar" id="searchbar">
-
-            <label class="searchbox">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
-                    <circle cx="11" cy="11" r="7"/>
-                    <path d="M20 20l-4-4"/>
-                </svg>
-
-                <input id="searchInput" type="text" placeholder="ค้นหาเมนู" data-ph="search">
-            </label>
-
-            <button class="cancel" id="searchCancel" data-i18n="cancel">
-                ยกเลิก
-            </button>
-
-        </div>
-
-                <!-- NAVIGATION -->
-        <nav class="nav" id="nav">
-            <a href="#menu">เมนู</a>
-            <a href="#deals">โปรโมชัน</a>
-            <a href="#app">แอป KFC</a>
-            <a href="#stores">ร้านใกล้คุณ</a>
-        </nav>
-
+<header class="header" id="header">
+  <div class="header__left">
+    <button class="burger" id="burger" aria-label="เมนู"><span></span><span></span><span></span></button>
+    <a href="#" class="logo" id="logoTrigger" aria-label="KFC"><img src="images/kfclogo.png" alt="KFC"></a>
+    <div class="seg" id="seg">
+      <button class="seg__btn active" data-i18n="delivery">เดลิเวอรี่</button>
+      <button class="seg__btn" data-i18n="pickup">รับกลับบ้าน / ทานที่ร้าน</button>
     </div>
-
-    <!-- ========================================
-         BANNER SLIDER
-    ======================================== -->
-
-    <section class="banner-slider" id="bannerSlider">
-
-        <div class="banner-track" id="bannerTrack">
-
-            <div class="banner-slide active">
-                <img src="images/banner/b1.webp" alt="KFC Original Recipe">
-            </div>
-
-            <div class="banner-slide">
-                <img src="images/banner/b2.webp" alt="KFC Fried Chicken">
-            </div>
-
-            <div class="banner-slide">
-                <img src="images/banner/b3.webp" alt="KFC The Box Kaisen and Scoops Fries">
-            </div>
-
-            <div class="banner-slide">
-                <img src="images/banner/b4.webp" alt="KFC Scoops Fries">
-            </div>
-
-        </div>
-
-        <button class="banner-arrow banner-prev" id="bannerPrev" aria-label="Previous banner">
-            &#10094;
-        </button>
-
-        <button class="banner-arrow banner-next" id="bannerNext" aria-label="Next banner">
-            &#10095;
-        </button>
-
-        <div class="banner-dots" id="bannerDots">
-            <button class="banner-dot active" data-slide="0" aria-label="Banner 1"></button>
-            <button class="banner-dot" data-slide="1" aria-label="Banner 2"></button>
-            <button class="banner-dot" data-slide="2" aria-label="Banner 3"></button>
-            <button class="banner-dot" data-slide="3" aria-label="Banner 4"></button>
-        </div>
-
-    </section>
-
+    <a href="#menu" class="btn btn--order"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3"/><circle cx="19" cy="17" r="2"/><path d="M9 17h7M13 6h4l2 6M6 14l3-6h4"/></svg><span data-i18n="order">เริ่มสั่งอาหาร</span></a>
+  </div>
+  <div class="header__right">
+    <span class="greet" id="greet">สวัสดีตอนบ่าย</span>
+    <button class="pill" id="loginBtn" data-i18n="login">เข้าสู่ระบบ / ลงทะเบียน</button>
+    <button class="icon" aria-label="ค้นหา" id="searchBtn"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+    <button class="icon bag" id="cartBtn" aria-label="ตะกร้า"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M6 3h12l2 4v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7l2-4zm1 5a5 5 0 0 0 10 0H15a3 3 0 0 1-6 0H7z"/></svg><em id="cartCount">0</em></button>
+    <div class="lang" id="lang"><button class="on" data-lang="th">TH</button><button data-lang="en">EN</button></div>
+  </div>
+  <div class="searchbar" id="searchbar">
+    <label class="searchbox"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="searchInput" type="text" placeholder="ค้นหาเมนู" data-ph="search"></label>
+    <button class="cancel" id="searchCancel" data-i18n="cancel">ยกเลิก</button>
+  </div>
+  <nav class="nav" id="nav"><a href="#menu">เมนู</a><a href="#deals">โปรโมชัน</a><a href="#app">แอป KFC</a><a href="#stores">ร้านใกล้คุณ</a></nav>
 </header>
 
-
-
-    <!-- ========================================
-         LOGO DRAWER
-    ======================================== -->
-
-    <div class="drawer-backdrop" id="drawerBackdrop"></div>
-
-    <aside class="logo-drawer" id="logoDrawer" aria-hidden="true">
-
-        <button class="logo-drawer__close" id="drawerClose" aria-label="ปิดเมนู">
-            ✕
-        </button>
-
-        <ul class="logo-drawer__list">
-            <li><a href="#deals" class="is-bold" data-i18n="drawer_promo">โปรโมชัน</a></li>
-            <li><a href="#menu" data-i18n="drawer_bestseller">สินค้าขายดี</a></li>
-            <li><a href="#menu" data-i18n="drawer_group">ชุดคอมโบ</a></li>
-            <li><a href="#menu" data-i18n="drawer_box">เดอะบ็อกซ์</a></li>
-            <li><a href="#menu" data-i18n="drawer_setone">ชุดอิ่มคนเดียว</a></li>
-            <li><a href="#menu" data-i18n="drawer_cbr">ไก่ทอด / เบอร์เกอร์ / ข้าว</a></li>
-            <li><a href="#menu" data-i18n="drawer_snacks">ของทานเล่น</a></li>
-            <li><a href="#menu" data-i18n="drawer_sweets">ของหวาน</a></li>
-            <li><a href="#menu" data-i18n="drawer_drinks">เครื่องดื่ม</a></li>
-        </ul>
-
-    </aside>
-
-
-    <!-- ========================================
-         HERO
-    ======================================== -->
-
-    <section class="hero">
-
-        <div class="hero__bg" data-parallax="0.3"></div>
-
-        <div class="hero__text reveal">
-            <span class="tag">ใหม่!</span>
-
-            <h1>ไก่ทอด<br>กรอบนอก<br>นุ่มใน</h1>
-
-            <p>สูตรลับ 11 เครื่องเทศและสมุนไพร ทอดสดใหม่ทุกวัน</p>
-
-            <a href="#menu" class="btn btn--primary">สั่งเลย</a>
-            <a href="#deals" class="btn btn--outline">ดูโปรโมชัน</a>
-        </div>
-
-        <div class="hero__art" data-parallax="-0.15">
-            <span class="bucket">🍗</span>
-            <span class="float f1">🍟</span>
-            <span class="float f2">🥤</span>
-            <span class="float f3">🍔</span>
-        </div>
-
-    </section>
-
-
-    <!-- ========================================
-         MENU
-    ======================================== -->
-
-    <section class="categories" id="menu">
-
-        <h2 class="title reveal">เลือกเมนูโปรด</h2>
-
-        <div class="cat-list">
-            <button class="cat active" data-cat="chicken"><i>🍗</i>ไก่ทอด</button>
-            <button class="cat" data-cat="burger"><i>🍔</i>เบอร์เกอร์</button>
-            <button class="cat" data-cat="snack"><i>🍟</i>ของทานเล่น</button>
-            <button class="cat" data-cat="drink"><i>🥤</i>เครื่องดื่ม</button>
-            <button class="cat" data-cat="dessert"><i>🍦</i>ของหวาน</button>
-        </div>
-
-        <div class="products" id="products"></div>
-
-    </section>
-
-
-    <!-- ========================================
-         DEALS
-    ======================================== -->
-
-    <section class="deals" id="deals">
-
-        <h2 class="title reveal">โปรโมชันสุดคุ้ม</h2>
-
-        <div class="carousel">
-
-            <button class="arrow" id="prev">‹</button>
-
-            <div class="track" id="track">
-
-                <article class="deal">
-                    <i>🍗</i>
-                    <h3>บักเก็ต 8 ชิ้น</h3>
-                    <p>ไก่ทอด 8 ชิ้น + เฟรนช์ฟรายส์ + น้ำ 4 แก้ว</p>
-                    <b>฿399</b>
-                </article>
-
-                <article class="deal deal--dark">
-                    <i>🍔</i>
-                    <h3>ซิงเกอร์ คอมโบ</h3>
-                    <p>ซิงเกอร์เบอร์เกอร์ + ไก่ทอด + น้ำ</p>
-                    <b>฿129</b>
-                </article>
-
-                <article class="deal">
-                    <i>🌶️</i>
-                    <h3>ไก่แซ่บ ฮอต &amp; สไปซี่</h3>
-                    <p>ไก่ทอดสไปซี่ 4 ชิ้น รสจัดจ้าน</p>
-                    <b>฿189</b>
-                </article>
-
-                <article class="deal deal--dark">
-                    <i>🍟</i>
-                    <h3>ชุดแชร์ปาร์ตี้</h3>
-                    <p>ไก่ 12 ชิ้น + นักเก็ต + ฟรายส์ใหญ่</p>
-                    <b>฿599</b>
-                </article>
-
-            </div>
-
-            <button class="arrow" id="next">›</button>
-
-        </div>
-
-    </section>
-
-
-    <!-- ========================================
-         PARALLAX BAND
-    ======================================== -->
-
-    <section class="parallax-band" data-parallax-bg>
-
-        <div class="reveal">
-            <h2>สูตรลับ<br>ตั้งแต่ปี 1930</h2>
-            <p>พันเอกฮาร์แลนด์ แซนเดอร์ส สร้างสรรค์รสชาติที่คนทั่วโลกรัก</p>
-            <a href="#" class="btn btn--primary">เรื่องราวของเรา</a>
-        </div>
-
-    </section>
-
-
-    <!-- ========================================
-         APP
-    ======================================== -->
-
-    <section class="app" id="app">
-
-        <div class="app__phone reveal">
-            📱<span>KFC</span>
-        </div>
-
-        <div class="app__text reveal">
-            <h2>ดาวน์โหลดแอป KFC</h2>
-            <p>สะสมแต้ม แลกคูปอง และสั่งอาหารได้ง่ายกว่าเดิม</p>
-
-            <ul>
-                <li>✔ คูปองพิเศษเฉพาะสมาชิก</li>
-                <li>✔ ติดตามสถานะการจัดส่ง</li>
-                <li>✔ สั่งล่วงหน้า ไม่ต้องรอ</li>
-            </ul>
-
-            <button class="btn btn--primary">App Store</button>
-            <button class="btn btn--dark">Google Play</button>
-        </div>
-
-    </section>
-
-
-    <!-- ========================================
-         STORE FINDER
-    ======================================== -->
-
-    <section class="stores" id="stores">
-
-        <div class="reveal">
-            <h2>ค้นหาร้าน KFC ใกล้คุณ</h2>
-            <p>มากกว่า 1,000 สาขาทั่วประเทศ</p>
-        </div>
-
-        <form class="finder" onsubmit="return false">
-            <input id="loc" placeholder="กรอกจังหวัดหรือรหัสไปรษณีย์">
-            <button class="btn btn--primary" id="find">ค้นหา</button>
-        </form>
-
-        <p id="findMsg" class="msg"></p>
-
-    </section>
-
-
-    <!-- ========================================
-         FOOTER
-    ======================================== -->
-
-    <footer class="footer">
-
-        <div class="cols">
-
-            <div>
-                <h4>เมนู</h4>
-                <a href="#">ไก่ทอด</a>
-                <a href="#">เบอร์เกอร์</a>
-                <a href="#">ของหวาน</a>
-            </div>
-
-            <div>
-                <h4>เกี่ยวกับ KFC</h4>
-                <a href="#">เรื่องราวของเรา</a>
-                <a href="#">ร่วมงานกับเรา</a>
-                <a href="#">ข่าวสาร</a>
-            </div>
-
-            <div>
-                <h4>ช่วยเหลือ</h4>
-                <a href="#">ติดต่อเรา</a>
-                <a href="#">คำถามที่พบบ่อย</a>
-                <a href="#">นโยบายความเป็นส่วนตัว</a>
-            </div>
-
-            <div>
-                <h4>ติดตามเรา</h4>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">YouTube</a>
-            </div>
-
-        </div>
-
-        <p class="copy">© 2026 KFC · งานนี้จัดทำเพื่อการศึกษาเท่านั้น</p>
-
-    </footer>
-
-
-    <!-- ========================================
-         LOGIN
-    ======================================== -->
-
-    <section class="login" id="login" aria-hidden="true">
-
-        <div class="login__top">
-
-            <a href="#" class="login__logo">
-                <img src="images/kfclogo.png" alt="KFC">
-            </a>
-
-            <div class="lang lang--login" id="lang2">
-                <button class="on" data-lang="th">TH</button>
-                <button data-lang="en">EN</button>
-            </div>
-
-        </div>
-
-        <button class="login__back" id="loginBack" aria-label="กลับ">
-            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 5l-7 7 7 7"/>
-            </svg>
-        </button>
-
-        <form class="login__box" id="loginForm" onsubmit="return false">
-
-            <h2 data-i18n="welcome">ยินดีต้อนรับสู่ KFC</h2>
-
-            <input type="tel" id="phone" placeholder="เบอร์โทรศัพท์" data-ph="phone">
-
-            <button class="btn btn--wide btn--primary" id="signin" data-i18n="signin">
-                ลงชื่อเข้าใช้
-            </button>
-
-            <p class="or" data-i18n="or">หรือ</p>
-
-            <button class="btn btn--wide btn--social" type="button">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="11" fill="#1877f2"/>
-                    <path d="M13.5 20v-6.5h2.2l.4-2.6h-2.6V9.3c0-.8.3-1.3 1.4-1.3h1.3V5.7c-.2 0-1-.1-1.9-.1-2 0-3.3 1.2-3.3 3.4v1.9H8.8v2.6H11V20z" fill="#fff"/>
-                </svg>
-                Sign in with Facebook
-            </button>
-
-            <button class="btn btn--wide btn--social" type="button">
-                <svg width="22" height="22" viewBox="0 0 48 48">
-                    <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6.1C12.3 13.6 17.7 9.5 24 9.5z"/>
-                    <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.5-4.1 7-10.2 7-17.6z"/>
-                    <path fill="#FBBC05" d="M10.4 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.9-4.7l-7.8-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8z"/>
-                    <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.7-4.1-13.6-9.8l-7.8 6.1C6.5 42.6 14.6 48 24 48z"/>
-                </svg>
-                Sign in with Google
-            </button>
-
-            <p class="noacc" data-i18n="noacc">ไม่มีบัญชีผู้ใช้</p>
-
-            <button class="btn btn--wide btn--outline-red" type="button" data-i18n="register">
-                สมัครบัญชีผู้ใช้
-            </button>
-
-            <p class="guest">
-                <span data-i18n="guest1">เริ่มใช้งานแบบ</span>
-                <a href="#" id="guest" data-i18n="guest2">ผู้ใช้ชั่วคราว</a>
-            </p>
-
-            <a href="#" class="forgot" data-i18n="forgot">ลืมรหัสผ่าน?</a>
-
-            <p class="msg" id="loginMsg"></p>
-
-        </form>
-
-    </section>
-
-
-    <!-- ========================================
-         TOAST
-    ======================================== -->
-
-    <div class="toast" id="toast"></div>
-
-
-    <!-- ========================================
-         MAIN JAVASCRIPT MODULE
-    ======================================== -->
-
-    <script type="module" src="js/main.js"></script>
-
+<!-- แถบเลื่อนด้านซ้ายเมื่อกดที่ Logo -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="logo-drawer" id="logoDrawer" aria-hidden="true">
+  <button class="logo-drawer__close" id="drawerClose" aria-label="ปิดเมนู">✕</button>
+  <ul class="logo-drawer__list">
+    <li><a href="#deals" class="is-bold" data-i18n="drawer_promo">โปรโมชัน</a></li>
+    <li><a href="#menu" data-i18n="drawer_bestseller">สินค้าขายดี</a></li>
+    <li><a href="#menu" data-i18n="drawer_group">ชุดคอมโบ</a></li>
+    <li><a href="#menu" data-i18n="drawer_box">เดอะบ็อกซ์</a></li>
+    <li><a href="#menu" data-i18n="drawer_setone">ชุดอิ่มคนเดียว</a></li>
+    <li><a href="#menu" data-i18n="drawer_cbr">ไก่ทอด / เบอร์เกอร์ / ข้าว</a></li>
+    <li><a href="#menu" data-i18n="drawer_snacks">ของทานเล่น</a></li>
+    <li><a href="#menu" data-i18n="drawer_sweets">ของหวาน</a></li>
+    <li><a href="#menu" data-i18n="drawer_drinks">เครื่องดื่ม</a></li>
+  </ul>
+</aside>
+
+<section class="hero">
+  <div class="hero__bg" data-parallax="0.3"></div>
+  <div class="hero__text reveal">
+    <span class="tag">ใหม่!</span>
+    <h1>ไก่ทอด<br>กรอบนอก<br>นุ่มใน</h1>
+    <p>สูตรลับ 11 เครื่องเทศและสมุนไพร ทอดสดใหม่ทุกวัน</p>
+    <a href="#menu" class="btn btn--primary">สั่งเลย</a>
+    <a href="#deals" class="btn btn--outline">ดูโปรโมชัน</a>
+  </div>
+  <div class="hero__art" data-parallax="-0.15"><span class="bucket">🍗</span><span class="float f1">🍟</span><span class="float f2">🥤</span><span class="float f3">🍔</span></div>
+</section>
+
+<section class="categories" id="menu">
+  <h2 class="title reveal">เลือกเมนูโปรด</h2>
+  <div class="cat-list">
+    <button class="cat active" data-cat="chicken"><i>🍗</i>ไก่ทอด</button>
+    <button class="cat" data-cat="burger"><i>🍔</i>เบอร์เกอร์</button>
+    <button class="cat" data-cat="snack"><i>🍟</i>ของทานเล่น</button>
+    <button class="cat" data-cat="drink"><i>🥤</i>เครื่องดื่ม</button>
+    <button class="cat" data-cat="dessert"><i>🍦</i>ของหวาน</button>
+  </div>
+  <div class="products" id="products"></div>
+</section>
+
+<section class="deals" id="deals">
+  <h2 class="title reveal">โปรโมชันสุดคุ้ม</h2>
+  <div class="carousel">
+    <button class="arrow" id="prev">‹</button>
+    <div class="track" id="track">
+      <article class="deal"><i>🍗</i><h3>บักเก็ต 8 ชิ้น</h3><p>ไก่ทอด 8 ชิ้น + เฟรนช์ฟรายส์ + น้ำ 4 แก้ว</p><b>฿399</b></article>
+      <article class="deal deal--dark"><i>🍔</i><h3>ซิงเกอร์ คอมโบ</h3><p>ซิงเกอร์เบอร์เกอร์ + ไก่ทอด + น้ำ</p><b>฿129</b></article>
+      <article class="deal"><i>🌶️</i><h3>ไก่แซ่บ ฮอต &amp; สไปซี่</h3><p>ไก่ทอดสไปซี่ 4 ชิ้น รสจัดจ้าน</p><b>฿189</b></article>
+      <article class="deal deal--dark"><i>🍟</i><h3>ชุดแชร์ปาร์ตี้</h3><p>ไก่ 12 ชิ้น + นักเก็ต + ฟรายส์ใหญ่</p><b>฿599</b></article>
+    </div>
+    <button class="arrow" id="next">›</button>
+  </div>
+</section>
+
+<section class="parallax-band" data-parallax-bg>
+  <div class="reveal"><h2>สูตรลับ<br>ตั้งแต่ปี 1930</h2><p>พันเอกฮาร์แลนด์ แซนเดอร์ส สร้างสรรค์รสชาติที่คนทั่วโลกรัก</p><a href="#" class="btn btn--primary">เรื่องราวของเรา</a></div>
+</section>
+
+<section class="app" id="app">
+  <div class="app__phone reveal">📱<span>KFC</span></div>
+  <div class="app__text reveal">
+    <h2>ดาวน์โหลดแอป KFC</h2>
+    <p>สะสมแต้ม แลกคูปอง และสั่งอาหารได้ง่ายกว่าเดิม</p>
+    <ul><li>✔ คูปองพิเศษเฉพาะสมาชิก</li><li>✔ ติดตามสถานะการจัดส่ง</li><li>✔ สั่งล่วงหน้า ไม่ต้องรอ</li></ul>
+    <button class="btn btn--primary">App Store</button> <button class="btn btn--dark">Google Play</button>
+  </div>
+</section>
+
+<section class="stores" id="stores">
+  <div class="reveal"><h2>ค้นหาร้าน KFC ใกล้คุณ</h2><p>มากกว่า 1,000 สาขาทั่วประเทศ</p></div>
+  <form class="finder" onsubmit="return false"><input id="loc" placeholder="กรอกจังหวัดหรือรหัสไปรษณีย์"><button class="btn btn--primary" id="find">ค้นหา</button></form>
+  <p id="findMsg" class="msg"></p>
+</section>
+
+<footer class="footer">
+  <div class="cols">
+    <div><h4>เมนู</h4><a href="#">ไก่ทอด</a><a href="#">เบอร์เกอร์</a><a href="#">ของหวาน</a></div>
+    <div><h4>เกี่ยวกับ KFC</h4><a href="#">เรื่องราวของเรา</a><a href="#">ร่วมงานกับเรา</a><a href="#">ข่าวสาร</a></div>
+    <div><h4>ช่วยเหลือ</h4><a href="#">ติดต่อเรา</a><a href="#">คำถามที่พบบ่อย</a><a href="#">นโยบายความเป็นส่วนตัว</a></div>
+    <div><h4>ติดตามเรา</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">YouTube</a></div>
+  </div>
+  <p class="copy">© 2026 KFC · งานนี้จัดทำเพื่อการศึกษาเท่านั้น</p>
+</footer>
+<section class="login" id="login" aria-hidden="true">
+  <div class="login__top"><a href="#" class="login__logo"><img src="images/kfclogo.png" alt="KFC"></a>
+    <div class="lang lang--login" id="lang2"><button class="on" data-lang="th">TH</button><button data-lang="en">EN</button></div></div>
+  <button class="login__back" id="loginBack" aria-label="กลับ"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <form class="login__box" id="loginForm" onsubmit="return false">
+    <h2 data-i18n="welcome">ยินดีต้อนรับสู่ KFC</h2>
+    <input type="tel" id="phone" placeholder="เบอร์โทรศัพท์" data-ph="phone">
+    <button class="btn btn--wide btn--primary" id="signin" data-i18n="signin">ลงชื่อเข้าใช้</button>
+    <p class="or" data-i18n="or">หรือ</p>
+    <button class="btn btn--wide btn--social" type="button"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1877f2"/><path d="M13.5 20v-6.5h2.2l.4-2.6h-2.6V9.3c0-.8.3-1.3 1.4-1.3h1.3V5.7c-.2 0-1-.1-1.9-.1-2 0-3.3 1.2-3.3 3.4v1.9H8.8v2.6H11V20z" fill="#fff"/></svg>Sign in with Facebook</button>
+    <button class="btn btn--wide btn--social" type="button"><svg width="22" height="22" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6.1C12.3 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.5-4.1 7-10.2 7-17.6z"/><path fill="#FBBC05" d="M10.4 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.9-4.7l-7.8-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.7-4.1-13.6-9.8l-7.8 6.1C6.5 42.6 14.6 48 24 48z"/></svg>Sign in with Google</button>
+    <p class="noacc" data-i18n="noacc">ไม่มีบัญชีผู้ใช้</p>
+    <button class="btn btn--wide btn--outline-red" type="button" data-i18n="register">สมัครบัญชีผู้ใช้</button>
+    <p class="guest"><span data-i18n="guest1">เริ่มใช้งานแบบ</span> <a href="#" id="guest" data-i18n="guest2">ผู้ใช้ชั่วคราว</a></p>
+    <a href="#" class="forgot" data-i18n="forgot">ลืมรหัสผ่าน?</a>
+    <p class="msg" id="loginMsg"></p>
+  </form>
+</section>
+<div class="toast" id="toast"></div>
+<script src="js/script.js"></script>
+<script>
+  (function () {
+    const burger = document.getElementById('burger');
+    const logoTrigger = document.getElementById('logoTrigger');
+    const drawer = document.getElementById('logoDrawer');
+    const backdrop = document.getElementById('drawerBackdrop');
+    const closeBtn = document.getElementById('drawerClose');
+
+    function openDrawer(e) {
+      e.preventDefault();
+      e.stopImmediatePropagation(); // ป้องกันไม่ให้ script.js เดิมทำงานซ้อน
+      drawer.classList.add('open');
+      backdrop.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      backdrop.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+
+    // กดขีด 3 ขีดเพื่อเปิดแถบเลื่อนด้านซ้าย
+    burger.addEventListener('click', openDrawer, true);
+
+    // กดโลโก้แล้วไม่มีอะไรเกิดขึ้น
+    if (logoTrigger) {
+      logoTrigger.addEventListener('click', function (e) {
+        e.preventDefault();
+      });
+    }
+
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+  })();
+</script>
 </body>
 </html>
