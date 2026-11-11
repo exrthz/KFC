@@ -1005,3 +1005,46 @@ h1, h2, h3, h4, .logo {
   background: #e4002b;
   color: #fff;
 }
+
+/* ขยายคอลัมน์สุดท้าย (BURGER KING) ให้กว้างกว่าคอลัมน์อื่นเพื่อไม่ให้ข้อความตกบรรทัด */
+@media (min-width: 861px) {
+  .footer .cols {
+    grid-template-columns: 1fr 1fr 1fr 1.8fr;
+  }
+}
+
+/* บังคับให้ลิงก์ Privacy Policy | Terms & Conditions | Contact us เรียงแนวนอน */
+.footer .footer-bottom-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  white-space: nowrap;
+}
+
+.footer .footer-bottom-links a {
+  display: inline-block;
+  padding: 0;
+}
+
+.footer .footer-bottom-links .divider {
+  opacity: 0.7;
+}
+
+/* บังคับให้ไอคอน Instagram และ Facebook เรียงแนวนอนข้างกัน */
+.footer .social-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.footer .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
