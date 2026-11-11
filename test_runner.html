@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Test Runner</title></head>
+<body>
+<div id="output">Running...</div>
+<iframe id="appFrame" src="Homepage/index.html" style="width:1200px; height:800px;"></iframe>
+<script>
+window.onload = function() {
+  setTimeout(() => {
+    const out = document.getElementById('output');
+    try {
+      const frame = document.getElementById('appFrame');
+      const doc = frame.contentDocument || frame.contentWindow.document;
+      const win = frame.contentWindow;
+
+      let log = [];
+
+      // Test 4: Toggle Delivery and Pickup
+      const deliveryBtn = doc.querySelector('.seg__btn[data-mode="delivery"]');
+      const pickupBtn = doc.querySelector('.seg__btn[data-mode="pickup"]');
+      
+      pickupBtn.click();
+      const test4a = pickupBtn.classList.contains('active') && !deliveryBtn.classList.contains('active');
+      log.push('TEST 4A (Switch to Pickup): ' + (test4a ? 'PASS' : 'FAIL'));
+
+      deliveryBtn.click();
+      const test4b = deliveryBtn.classList.contains('active') && !pickupBtn.classList.contains('active');
+      log.push('TEST 4B (Switch to Delivery): ' + (test4b ? 'PASS' : 'FAIL'));
+
+      // Test 2: Language Switch
+      const enBtn = doc.querySelector('#lang button[data-lang="en"]');
+      const thBtn = doc.querySelector('#lang button[data-lang="th"]');
+      
+      enBtn.click();
+      const test2a = doc.documentElement.lang === 'en' && doc.querySelector('.card h3').textContent.includes('Original Recipe');
+      log.push('TEST 2A (Switch to EN): ' + (test2a ? 'PASS' : 'FAIL'));
+
+      thBtn.click();
+      const test2b = doc.documentElement.lang === 'th' && doc.querySelector('.card h3').textContent.includes('ไก่ทอดต้นตำรับ');
+      log.push('TEST 2B (Switch to TH): ' + (test2b ? 'PASS' : 'FAIL'));
+
+      // Test 3: Cart Click when NOT logged in -> opens Login modal
+      win.localStorage.clear();
+      const cartBtn = doc.getElementById('cartBtn');
+      const loginModal = doc.getElementById('login');
+      cartBtn.click();
+      const test3a = loginModal.classList.contains('open');
+      log.push('TEST 3A (Cart click without login opens login): ' + (test3a ? 'PASS' : 'FAIL'));
+
+      // Test 1: Login
+      const phoneInput = doc.getElementById('phone');
+      const signinBtn = doc.getElementById('signin');
+      const loginBtn = doc.getElementById('loginBtn');
+      phoneInput.value = '0812345678';
+      signinBtn.click();
+      const test1a = !loginModal.classList.contains('open') && loginBtn.textContent.includes('0812345678');
+      log.push('TEST 1A (Login with phone): ' + (test1a ? 'PASS' : 'FAIL'));
+
+      // Test 3B: Cart click when logged in -> does NOT open login modal
+      cartBtn.click();
+      const test3b = !loginModal.classList.contains('open');
+      log.push('TEST 3B (Cart click when logged in): ' + (test3b ? 'PASS' : 'FAIL'));
+
+      // Test 1B: Logout
+      loginBtn.click();
+      const test1b = loginBtn.textContent.includes('เข้าสู่ระบบ');
+      log.push('TEST 1B (Logout): ' + (test1b ? 'PASS' : 'FAIL'));
+
+      out.innerHTML = '<pre>' + log.join('\n') + '</pre>';
+    } catch (err) {
+      out.innerHTML = '<pre>ERROR: ' + err.message + '</pre>';
+    }
+  }, 800);
+};
+</script>
+</body>
+</html>

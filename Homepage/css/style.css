@@ -377,8 +377,14 @@ h1, h2, h3, h4, .logo {
   transform: translateX(0);
 }
 
+.logo-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 .logo-drawer__close {
-  align-self: flex-start;
   background: none;
   border: none;
   font-size: 24px;
@@ -386,10 +392,77 @@ h1, h2, h3, h4, .logo {
   color: #1b1b1b;
   cursor: pointer;
   padding: 4px;
-  margin-bottom: 24px;
 }
 .logo-drawer__close:hover {
   color: #e4002b;
+}
+
+.logo-drawer__auth {
+  margin-bottom: 14px;
+}
+.logo-drawer__auth .pill {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  padding: 10px 16px;
+}
+
+.logo-drawer__seg {
+  margin-bottom: 20px;
+}
+.logo-drawer__seg .seg {
+  display: flex;
+  width: 100%;
+  border: 2px solid #1b1b1b;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+.logo-drawer__seg .seg__btn {
+  flex: 1;
+  font: 600 0.85rem "Kanit", sans-serif;
+  padding: 9px 8px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.25s, color 0.25s;
+}
+.logo-drawer__seg .seg__btn.active {
+  background: #1b1b1b;
+  color: #fff;
+}
+
+.lang--drawer {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid #1b1b1b;
+  border-radius: 999px;
+  padding: 2px;
+  background: #fff;
+}
+.lang--drawer button {
+  border: 0;
+  background: transparent;
+  color: #1b1b1b;
+  font: 700 0.75rem "Kanit", sans-serif;
+  padding: 3px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.lang--drawer button.on {
+  background: #1b1b1b;
+  color: #fff;
+}
+
+.pill.logged-in {
+  background: #e4002b;
+  color: #fff;
+}
+.pill.logged-in:hover {
+  background: #b50022;
 }
 
 .logo-drawer__list {
@@ -831,7 +904,9 @@ h1, h2, h3, h4, .logo {
   padding: 14px 28px;
   border-radius: 50px;
   transition: transform 0.4s;
-  z-index: 99;
+  z-index: 999;
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 .toast.on {
   transform: translate(-50%, 0);
@@ -840,7 +915,7 @@ h1, h2, h3, h4, .logo {
 .login {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 250;
   padding: 0;
   background: #f5ebdc;
   overflow-y: auto;
@@ -1047,4 +1122,46 @@ h1, h2, h3, h4, .logo {
   align-items: center;
   justify-content: center;
   padding: 0;
+}
+
+/* ควบคุมขนาดปุ่มดาวน์โหลดแอปให้พอดีและสวยงาม */
+.app__buttons {
+  display: flex;
+  flex-direction: row; /* จัดเรียงปุ่มให้อยู่ในแนวนอน */
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.store-badge {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+/* กำหนดความสูงให้รูปภาพปุ่มไม่ให้ใหญ่เกินไป (เช่น 44px) และความกว้างปรับอัตโนมัติ */
+.store-badge img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: none !important;
+  display: block;
+}
+
+.store-badge:hover {
+  transform: scale(1.05);
+}
+
+/* จัดการขนาดไอคอนโทรศัพท์ด้านข้างให้พอดี ไม่ให้เล็กหรือใหญ่ผิดปกติ */
+.app__mockup .phone-tilt {
+  font-size: 5rem; /* ปรับขนาดไอคอนโทรศัพท์ให้สมดุล */
+  transform: rotate(-15deg);
+}
+
+@media (max-width: 860px) {
+  .app {
+    flex-direction: column;
+    text-align: center;
+  }
+  .app__buttons {
+    justify-content: center;
+  }
 }
