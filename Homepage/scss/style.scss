@@ -71,27 +71,32 @@ $beige: #f5ebdc;
 @keyframes bounce { 50% { transform: translateY(-22px) rotate(4deg); } }
 @keyframes floaty { 50% { transform: translateY(-18px) rotate(-10deg); } }
 
-// ===== Categories & products =====
-.cat-list { @include flex(row, center); flex-wrap: wrap; gap: 18px; margin-bottom: 40px; }
-.cat { @include flex(column); width: 110px; height: 110px; border-radius: 50%; border: 3px solid transparent; background: $white; font: 600 .95rem $font-body; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,.1); transition: all .3s;
-  i { font-size: 2.4rem; font-style: normal; transition: transform .3s; }
-  &:hover i { transform: scale(1.25) rotate(-8deg); }
-  &.active { background: $red; color: $white; border-color: $gold; transform: scale(1.08); } }
-.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
-.card { background: $white; border-radius: $radius; padding: 24px; text-align: center; @include lift; animation: pop .5s both;
-  i { display: block; font-size: 4.5rem; font-style: normal; margin-bottom: 8px; }
-  h3 { font-size: 1.3rem; margin-bottom: 6px; } p { font-size: .9rem; color: #666; min-height: 40px; }
-  b { display: block; color: $red; font-size: 1.5rem; margin: 10px 0; } }
+// ===== Category tabs & products =====
+.categories { padding-top: 60px; }
+.cat-list { display: flex; gap: 4px; overflow-x: auto; margin: 0 -6% 36px; padding: 0 6%; border-bottom: 1px solid #e8d9c6; scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+.cat { @include flex(column, flex-start); flex: 1 0 96px; max-width: 132px; padding: 6px 4px 14px; gap: 8px; background: none; border: 0; border-bottom: 3px solid transparent; margin-bottom: -1px; color: $dark; font: 600 .85rem/1.25 $font-body; text-align: center; cursor: pointer; transition: color .2s, border-color .2s;
+  svg { width: 38px; height: 38px; transition: transform .3s; .ac { fill: rgba($red, .14); } .ac-s { stroke: $red; } }
+  &:hover { color: $red; svg { transform: translateY(-3px) scale(1.08); } }
+  &.active { color: $red; border-bottom-color: $red; svg .ac { fill: rgba($red, .25); } } }
+.products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 26px;
+  @media (max-width: 1000px) { grid-template-columns: repeat(2, 1fr); } @media (max-width: 560px) { gap: 22px 14px; } @media (max-width: 340px) { grid-template-columns: 1fr; } }
+.card { animation: pop .5s both;
+  &__img { @include flex; aspect-ratio: 16 / 10; border-radius: 14px; margin-bottom: 14px; background: radial-gradient(circle at 50% 45%, $white 0 34%, transparent 35%), linear-gradient(180deg, #fff3e6 0 62%, $red 62%); box-shadow: 0 4px 14px rgba(0,0,0,.07); transition: transform .3s ease, box-shadow .3s ease; overflow: hidden; }
+  &:hover &__img { transform: translateY(-6px); box-shadow: 0 14px 28px rgba(0,0,0,.14); }
+  &__art { width: 42%; height: auto; color: $dark; stroke-width: 1.8; transition: transform .35s; .ac { fill: $red; } .ac-s { stroke: $gold; stroke-width: 3; } }
+  &:hover &__art { transform: scale(1.08) rotate(-4deg); }
+  &__row { @include flex(row, space-between); gap: 12px; & + & { margin-top: 10px; } }
+  h3 { font: 600 1rem $font-body; text-transform: none; letter-spacing: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  b { flex: none; color: $red; font-weight: 600; }
+  &__tags { display: flex; gap: 8px; color: #5a3a22; svg { width: 20px; height: 20px; } } }
+.btn--select { padding: 6px 18px; font-size: .95rem; }
+// centre the tab row (falls back to scrolling when it overflows)
+.cat:first-child { margin-left: auto; } .cat:last-child { margin-right: auto; }
+.card__img.has-photo { background: $white; .card__art { display: none; } }
+.card__photo { width: 100%; height: 100%; object-fit: contain; padding: 6px; transition: transform .35s; }
+.card:hover .card__photo { transform: scale(1.05); }
+.card__tags i { display: inline-flex; font-style: normal; }
 @keyframes pop { from { opacity: 0; transform: scale(.85) translateY(20px); } }
-
-// ===== Deals carousel =====
-.deals { background: $white; }
-.carousel { @include flex; gap: 10px; }
-.track { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 10px; scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
-.deal { flex: 0 0 280px; scroll-snap-align: start; background: $red; color: $white; border-radius: $radius; padding: 30px; @include lift;
-  i { font-size: 4rem; font-style: normal; } h3 { font-size: 1.5rem; margin: 10px 0; } p { min-height: 54px; } b { font: 2.2rem $font-head; color: $gold; }
-  &--dark { background: $dark; } }
-.arrow { width: 46px; height: 46px; flex: none; border-radius: 50%; border: 0; background: $dark; color: $white; font-size: 1.6rem; cursor: pointer; transition: background .2s; &:hover { background: $red; } }
 
 // ===== Parallax band =====
 .parallax-band { min-height: 60vh; @include flex; text-align: center; color: $white; background: linear-gradient(rgba(0,0,0,.6), rgba(228,0,43,.7)), repeating-linear-gradient(135deg, #3a0008 0 30px, #4d000c 30px 60px); background-attachment: fixed; background-size: cover;
