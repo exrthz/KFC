@@ -1201,3 +1201,127 @@ h1, h2, h3, h4, .logo {
     justify-content: center;
   }
 }
+
+/* ===== ปรับแต่งส่วน App (Download Application) ===== */
+/* 1. ตั้งค่า Section App ให้รองรับการจัดวางแนวตั้งและซ่อนส่วนที่เกิน (ถ้าต้องการ) หรือปล่อยให้ยื่นลงมา */
+.app {
+  background: #1b1b1b !important;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end; /* จัดให้เนื้อหาชิดด้านล่างของ Flex Container */
+  gap: 60px;
+  padding: 80px 6% 0px 6%; /* ลด padding ด้านล่างให้เป็น 0 เพื่อให้รูปชิดขอบล่างสุด */
+  overflow: hidden; /* ป้องกันไม่ให้มี Scrollbar แนวนอนเกินออกไป */
+}
+
+/* 2. ดึงรูปภาพโทรศัพท์ให้ลงมาชิดขอบล่างสุด */
+.app__mockup {
+  background: none !important;
+  box-shadow: none !important;
+  margin-bottom: -40px; /* ดึงให้ตัวเครื่องจมลงไปชิดหรือเลยขอบล่างเล็กน้อยตามต้องการ */
+  display: flex;
+  align-items: flex-end;
+}
+
+.app__mockup .phone-img {
+  width: 280px;
+  height: auto;
+  display: block;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+/* 3. จัดตำแหน่งฝั่งข้อความให้อยู่กึ่งกลางในแนวตั้งกับบล็อก */
+.app__text {
+  max-width: 480px;
+  padding-bottom: 80px; /* เว้นระยะขอบล่างให้ข้อความลอยอยู่ตรงกลางสวยงาม */
+}
+
+
+/* ===== Hero Image Slider ===== */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  background: #1b1b1b;
+}
+
+.hero-slider__track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.hero-slider__slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+/* ปรับความสูงของรูปภาพให้สูงขึ้นตรงนี้ */
+.hero-slider__slide img {
+  width: 100%;
+  height: auto;
+  min-height: 480px;      /* กำหนดความสูงขั้นต่ำไม่ให้เตี้ยเกินไปบนจอเล็ก */
+  max-height: 700px;      /* ปรับตัวเลขนี้ให้สูงขึ้นตามต้องการ (เช่น 650px หรือ 700px) */
+  object-fit: cover;      /* ให้รูปขยายเต็มพื้นที่โดยสัดส่วนไม่เพี้ยน */
+  display: block;
+}
+
+.hero-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 64px;
+  border: 0;
+  background: rgba(59, 25, 12, 0.75);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.hero-slider__arrow:hover {
+  background: rgba(59, 25, 12, 0.95);
+}
+
+.hero-slider__arrow--prev {
+  left: 0;
+}
+
+.hero-slider__arrow--next {
+  right: 0;
+}
+
+/* ===== Hero Slider Dots Indicators ===== */
+.hero-slider__dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.hero-slider__dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hero-slider__dots span.active {
+  background: #ffffff;
+  transform: scale(1.2);
+}

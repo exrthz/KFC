@@ -784,3 +784,46 @@ $$('.reveal').forEach(el => io.observe(el));
 updateCartCount();
 setOrderMode(currentOrderMode, false);
 applyLang();
+
+// Hero Image Slider with Dots
+(function () {
+  const track = document.getElementById('heroTrack');
+  const prev = document.getElementById('heroPrev');
+  const next = document.getElementById('heroNext');
+  const dotsContainer = document.getElementById('heroDots');
+  if (!track || !prev || !next || !dotsContainer) return;
+
+  const slides = track.children;
+  const total = slides.length;
+  const dots = dotsContainer.querySelectorAll('span');
+  let index = 0;
+  let slideInterval;
+
+  function goTo(i) {
+    index = (i + total) % total;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    
+    // อัปเดตสถานะ Active ของจุด
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === index);
+    });
+  }
+
+  function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(() => goTo(index + 1), 5000);
+  }
+
+  prev.addEventListener('click', () => { goTo(index - 1); resetInterval(); });
+  next.addEventListener('click', () => { goTo(index + 1); resetInterval(); });
+
+  // กดที่จุดเพื่อเปลี่ยนสไลด์
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goTo(parseInt(dot.dataset.index));
+      resetInterval();
+    });
+  });
+
+  slideInterval = setInterval(() => goTo(index + 1), 5000);
+})();
